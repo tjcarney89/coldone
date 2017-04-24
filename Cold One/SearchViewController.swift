@@ -19,6 +19,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
     @IBOutlet weak var pourButton: UIButton!
     
     let store = BeerDataStore.shared
+    var currentBeer: Beer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +42,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
                     self.breweryLabel.text = "Brewed by \(beer.brewery)"
                     self.styleLabel.text = "Style: \(beer.style)"
                     self.abvLabel.text = "ABV: \(beer.abv)"
+                    self.currentBeer = beer
                 }
             })
         }
@@ -48,6 +50,10 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
     
     
     @IBAction func saveButtonTapped(_ sender: Any) {
+        if let beer = currentBeer {
+            store.savedBeers.append(beer)
+            print(store.savedBeers)
+        }
     }
     
     @IBAction func pourButtonTapped(_ sender: Any) {

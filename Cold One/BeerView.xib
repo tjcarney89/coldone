@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BeerView" customModule="Cold_One" customModuleProvider="target">
+            <connections>
+                <outlet property="beerNameLabel" destination="CyB-h3-MWb" id="K9a-8J-g1k"/>
+                <outlet property="breweryLabel" destination="k0F-WH-HAO" id="Lfk-Qb-PSZ"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="fNO-31-mVh"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goose IPA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CyB-h3-MWb">
+                    <rect key="frame" x="16" y="11" width="79" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goose Island Beer Company" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k0F-WH-HAO">
+                    <rect key="frame" x="16" y="40" width="217" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RnD-cy-Wzf">
+                    <rect key="frame" x="327" y="6" width="32" height="30"/>
+                    <state key="normal" title="Pour"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="RnD-cy-Wzf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="6" id="F05-Ry-HTC"/>
+                <constraint firstItem="CyB-h3-MWb" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="11" id="OVw-Q9-x5V"/>
+                <constraint firstItem="k0F-WH-HAO" firstAttribute="top" secondItem="CyB-h3-MWb" secondAttribute="bottom" constant="8" id="OnM-gM-1qR"/>
+                <constraint firstAttribute="trailing" secondItem="RnD-cy-Wzf" secondAttribute="trailing" constant="16" id="XBn-ov-L5D"/>
+                <constraint firstItem="CyB-h3-MWb" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="XjS-JJ-Zhg"/>
+                <constraint firstItem="k0F-WH-HAO" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="eyX-o1-udp"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+</document>
