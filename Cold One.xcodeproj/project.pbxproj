@@ -17,6 +17,7 @@
 		F034AFC01EAE2F0E00DC5B15 /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F034AFBF1EAE2F0E00DC5B15 /* Beer.swift */; };
 		F034AFC21EAE4B5500DC5B15 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = F034AFC11EAE4B5500DC5B15 /* Secret.swift */; };
 		F034AFC71EAE6A7700DC5B15 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F034AFC61EAE6A7700DC5B15 /* SearchViewController.swift */; };
+		F034AFC91EAE78F800DC5B15 /* BeerDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F034AFC81EAE78F800DC5B15 /* BeerDataStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		F034AFBF1EAE2F0E00DC5B15 /* Beer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beer.swift; sourceTree = "<group>"; };
 		F034AFC11EAE4B5500DC5B15 /* Secret.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 		F034AFC61EAE6A7700DC5B15 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		F034AFC81EAE78F800DC5B15 /* BeerDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeerDataStore.swift; sourceTree = "<group>"; };
 		FBB0D7E29756CCCF6FDECF39 /* Pods-Cold One.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cold One.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cold One/Pods-Cold One.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				F034AFBB1EAE2D2100DC5B15 /* BrewerydbAPIClient.swift */,
+				F034AFC81EAE78F800DC5B15 /* BeerDataStore.swift */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F034AFC91EAE78F800DC5B15 /* BeerDataStore.swift in Sources */,
 				F034AFBE1EAE2F0700DC5B15 /* Brewery.swift in Sources */,
 				F034AFC71EAE6A7700DC5B15 /* SearchViewController.swift in Sources */,
 				F034AFC21EAE4B5500DC5B15 /* Secret.swift in Sources */,

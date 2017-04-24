@@ -18,7 +18,8 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var pourButton: UIButton!
     
-
+    let store = BeerDataStore.shared
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         beerSearchBar.delegate = self
@@ -33,21 +34,16 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if let search = searchBar.text {
             print("SEARCH: \(search)")
-            BrewerydbAPIClient.getBeer(name: search) { (beer) in
-                BrewerydbAPIClient.getBeerBrewery(beer: beer, completion: { (newBeer) in
-                    print("BEER: \(newBeer)")
-                    DispatchQueue.main.async {
-                        self.unhideLabels()
-                        self.nameLabel.text = newBeer.name
-                        self.breweryLabel.text = "Brewed by \(newBeer.brewery)"
-                        self.styleLabel.text = "Style: \(newBeer.style)"
-                        self.abvLabel.text = "ABV: \(newBeer.abv)"
-                    }
-                    
-                })
-            }
+            store.getBeer(name: search, completion: { (beer) in
+                DispatchQueue.main.async {
+                    self.unhideLabels()
+                    self.nameLabel.text = beer.name
+                    self.breweryLabel.text = "Brewed by \(beer.brewery)"
+                    self.styleLabel.text = "Style: \(beer.style)"
+                    self.abvLabel.text = "ABV: \(beer.abv)"
+                }
+            })
         }
-
     }
     
     
