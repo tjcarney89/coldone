@@ -9,15 +9,12 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        BrewerydbAPIClient.getBeer(name: "bud light") { (beer) in
-            BrewerydbAPIClient.getBeerBrewery(beer: beer, completion: { (newBeer) in
-                print("BEER: \(newBeer)")
-            })
-            
-        }
+        
     }
 
     override func didReceiveMemoryWarning() {

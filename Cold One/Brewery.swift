@@ -12,6 +12,7 @@ struct Brewery {
     
     let id = String()
     let name = String()
+    let state = String()
     let beers = [Beer]()
     
 }

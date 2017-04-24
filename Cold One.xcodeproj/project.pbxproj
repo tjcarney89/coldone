@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1E42DC9A04C4DBCC9F2E7E10 /* Pods_Cold_One.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8703B370CDBF2950970D40A4 /* Pods_Cold_One.framework */; };
 		F034AFAA1EAE2C9200DC5B15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F034AFA91EAE2C9200DC5B15 /* AppDelegate.swift */; };
-		F034AFAC1EAE2C9200DC5B15 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F034AFAB1EAE2C9200DC5B15 /* ViewController.swift */; };
 		F034AFAF1EAE2C9300DC5B15 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F034AFAD1EAE2C9300DC5B15 /* Main.storyboard */; };
 		F034AFB11EAE2C9300DC5B15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F034AFB01EAE2C9300DC5B15 /* Assets.xcassets */; };
 		F034AFB41EAE2C9300DC5B15 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F034AFB21EAE2C9300DC5B15 /* LaunchScreen.storyboard */; };
@@ -17,6 +16,7 @@
 		F034AFBE1EAE2F0700DC5B15 /* Brewery.swift in Sources */ = {isa = PBXBuildFile; fileRef = F034AFBD1EAE2F0700DC5B15 /* Brewery.swift */; };
 		F034AFC01EAE2F0E00DC5B15 /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F034AFBF1EAE2F0E00DC5B15 /* Beer.swift */; };
 		F034AFC21EAE4B5500DC5B15 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = F034AFC11EAE4B5500DC5B15 /* Secret.swift */; };
+		F034AFC71EAE6A7700DC5B15 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F034AFC61EAE6A7700DC5B15 /* SearchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,7 +24,6 @@
 		8703B370CDBF2950970D40A4 /* Pods_Cold_One.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cold_One.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F034AFA61EAE2C9200DC5B15 /* Cold One.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cold One.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F034AFA91EAE2C9200DC5B15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F034AFAB1EAE2C9200DC5B15 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F034AFAE1EAE2C9300DC5B15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F034AFB01EAE2C9300DC5B15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F034AFB31EAE2C9300DC5B15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -33,6 +32,7 @@
 		F034AFBD1EAE2F0700DC5B15 /* Brewery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Brewery.swift; sourceTree = "<group>"; };
 		F034AFBF1EAE2F0E00DC5B15 /* Beer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beer.swift; sourceTree = "<group>"; };
 		F034AFC11EAE4B5500DC5B15 /* Secret.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
+		F034AFC61EAE6A7700DC5B15 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		FBB0D7E29756CCCF6FDECF39 /* Pods-Cold One.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cold One.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cold One/Pods-Cold One.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,17 +87,41 @@
 			isa = PBXGroup;
 			children = (
 				F034AFA91EAE2C9200DC5B15 /* AppDelegate.swift */,
-				F034AFAB1EAE2C9200DC5B15 /* ViewController.swift */,
-				F034AFBB1EAE2D2100DC5B15 /* BrewerydbAPIClient.swift */,
-				F034AFBD1EAE2F0700DC5B15 /* Brewery.swift */,
+				F034AFC51EAE692400DC5B15 /* Controllers */,
+				F034AFC31EAE68F800DC5B15 /* Models */,
+				F034AFC41EAE690C00DC5B15 /* Utility */,
 				F034AFC11EAE4B5500DC5B15 /* Secret.swift */,
-				F034AFBF1EAE2F0E00DC5B15 /* Beer.swift */,
 				F034AFAD1EAE2C9300DC5B15 /* Main.storyboard */,
 				F034AFB01EAE2C9300DC5B15 /* Assets.xcassets */,
 				F034AFB21EAE2C9300DC5B15 /* LaunchScreen.storyboard */,
 				F034AFB51EAE2C9300DC5B15 /* Info.plist */,
 			);
 			path = "Cold One";
+			sourceTree = "<group>";
+		};
+		F034AFC31EAE68F800DC5B15 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F034AFBF1EAE2F0E00DC5B15 /* Beer.swift */,
+				F034AFBD1EAE2F0700DC5B15 /* Brewery.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		F034AFC41EAE690C00DC5B15 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				F034AFBB1EAE2D2100DC5B15 /* BrewerydbAPIClient.swift */,
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
+		F034AFC51EAE692400DC5B15 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F034AFC61EAE6A7700DC5B15 /* SearchViewController.swift */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,8 +248,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F034AFBE1EAE2F0700DC5B15 /* Brewery.swift in Sources */,
+				F034AFC71EAE6A7700DC5B15 /* SearchViewController.swift in Sources */,
 				F034AFC21EAE4B5500DC5B15 /* Secret.swift in Sources */,
-				F034AFAC1EAE2C9200DC5B15 /* ViewController.swift in Sources */,
 				F034AFC01EAE2F0E00DC5B15 /* Beer.swift in Sources */,
 				F034AFAA1EAE2C9200DC5B15 /* AppDelegate.swift in Sources */,
 				F034AFBC1EAE2D2100DC5B15 /* BrewerydbAPIClient.swift in Sources */,
