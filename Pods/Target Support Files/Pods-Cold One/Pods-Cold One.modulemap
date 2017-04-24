@@ -1,0 +1,6 @@
+framework module Pods_Cold_One {
+  umbrella header "Pods-Cold One-umbrella.h"
+
+  export *
+  module * { export * }
+}

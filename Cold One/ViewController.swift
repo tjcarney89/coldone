@@ -12,7 +12,12 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        BrewerydbAPIClient.getBeer(name: "bud light") { (beer) in
+            BrewerydbAPIClient.getBeerBrewery(beer: beer, completion: { (newBeer) in
+                print("BEER: \(newBeer)")
+            })
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {
