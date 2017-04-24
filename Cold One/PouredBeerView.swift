@@ -1,5 +1,5 @@
 //
-//  BeerView.swift
+//  PouredBeerView.swift
 //  Cold One
 //
 //  Created by TJ Carney on 4/24/17.
@@ -8,11 +8,12 @@
 
 import UIKit
 
-class BeerView: UIView {
+class PouredBeerView: UIView {
 
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var beerNameLabel: UILabel!
     @IBOutlet weak var breweryLabel: UILabel!
+    @IBOutlet weak var favoriteButton: UIButton!
     
     var beer: Beer! {
         
@@ -21,6 +22,7 @@ class BeerView: UIView {
             breweryLabel.text = beer.brewery
         }
     }
+    
     
     
     override init(frame: CGRect) {
@@ -34,13 +36,26 @@ class BeerView: UIView {
     }
     
     func commonInit() {
-        Bundle.main.loadNibNamed("BeerView", owner: self, options: nil)
+        Bundle.main.loadNibNamed("PouredBeerView", owner: self, options: nil)
         contentView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(contentView)
         contentView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
         contentView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
         contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         contentView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        
     }
-
+    
+    
+    @IBAction func favoriteButtonTapped(_ sender: Any) {
+        print("GETTING TAPPED")
+        if favoriteButton.imageView?.image == #imageLiteral(resourceName: "empty star") {
+            print("EMPTY STAR!")
+            favoriteButton.setImage(#imageLiteral(resourceName: "filled star"), for: .normal)
+        } else {
+            favoriteButton.setImage(#imageLiteral(resourceName: "empty star"), for: .normal)
+        }
+    }
+    
+    
 }

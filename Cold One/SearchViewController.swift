@@ -57,6 +57,10 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
     }
     
     @IBAction func pourButtonTapped(_ sender: Any) {
+        if let beer = currentBeer {
+            store.pouredBeers.append(beer)
+            print(store.pouredBeers)
+        }
     }
     
     func hideLabels() {

@@ -1,5 +1,5 @@
 //
-//  SavedTableViewController.swift
+//  PouredTableViewController.swift
 //  Cold One
 //
 //  Created by TJ Carney on 4/24/17.
@@ -8,16 +8,15 @@
 
 import UIKit
 
-class SavedTableViewController: UITableViewController {
+class PouredTableViewController: UITableViewController {
     
     let store = BeerDataStore.shared
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("SAVED: \(store.savedBeers)")
+        print("POURED: \(store.pouredBeers)")
 
     }
-
 
     // MARK: - Table view data source
 
@@ -28,15 +27,14 @@ class SavedTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return store.savedBeers.count
+        return store.pouredBeers.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "beerCell", for: indexPath) as! SavedBeerCell
-        let currentBeer = store.savedBeers[indexPath.row]
-        print(currentBeer)
-        cell.savedBeerView.beer = currentBeer
+        let cell = tableView.dequeueReusableCell(withIdentifier: "pouredCell", for: indexPath) as! PouredBeerCell
+        let currentBeer = store.pouredBeers[indexPath.row]
+        cell.pouredBeerView.beer = currentBeer
 
         // Configure the cell...
 

@@ -13,6 +13,7 @@ final class BeerDataStore {
     private init () {}
     
     var savedBeers = [Beer]()
+    var pouredBeers = [Beer]()
     
     func getBeer(name: String, completion: @escaping (Beer) -> ()) {
         BrewerydbAPIClient.getBeer(name: name) { (beer) in

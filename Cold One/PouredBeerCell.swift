@@ -1,5 +1,5 @@
 //
-//  SavedBeerCell.swift
+//  PouredBeerCell.swift
 //  Cold One
 //
 //  Created by TJ Carney on 4/24/17.
@@ -8,9 +8,8 @@
 
 import UIKit
 
-class SavedBeerCell: UITableViewCell {
-    
-    
-    @IBOutlet weak var savedBeerView: SavedBeerView!
+class PouredBeerCell: UITableViewCell {
+
+    @IBOutlet weak var pouredBeerView: PouredBeerView!
     
 }

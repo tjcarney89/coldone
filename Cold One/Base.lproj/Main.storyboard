@@ -75,6 +75,13 @@
                                     <segue destination="Vyq-ex-AGN" kind="show" id="Ri5-EF-LuZ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bBB-ll-4Ee">
+                                <rect key="frame" x="16" y="123" width="93" height="30"/>
+                                <state key="normal" title="Poured Beers"/>
+                                <connections>
+                                    <segue destination="Rgp-dQ-5vF" kind="show" id="XPk-SJ-uuI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -84,8 +91,10 @@
                             <constraint firstItem="9Ft-R8-otv" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="7Qu-2a-ulq"/>
                             <constraint firstItem="Qvs-cu-2a8" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="138" id="7V8-68-tMV"/>
                             <constraint firstAttribute="trailingMargin" secondItem="XmH-Mt-qso" secondAttribute="trailing" id="8hx-D7-SEd"/>
+                            <constraint firstItem="bBB-ll-4Ee" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="59" id="GQ1-kl-3jG"/>
                             <constraint firstItem="SaT-rZ-hWz" firstAttribute="top" secondItem="Qvs-cu-2a8" secondAttribute="bottom" constant="20" id="GSH-Sr-llN"/>
                             <constraint firstItem="SaT-rZ-hWz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Kak-C3-6w0"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="bBB-ll-4Ee" secondAttribute="leading" id="Ldu-or-qfd"/>
                             <constraint firstItem="9Ft-R8-otv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YoN-hb-oZL"/>
                             <constraint firstItem="OiV-UW-ubc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="80" id="ZdU-kb-oOM"/>
                             <constraint firstItem="Bdq-us-zhR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bQf-9u-XYP"/>
@@ -132,7 +141,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uu7-0f-9u8" customClass="BeerView" customModule="Cold_One" customModuleProvider="target">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uu7-0f-9u8" customClass="SavedBeerView" customModule="Cold_One" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </view>
@@ -145,7 +154,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="beerView" destination="uu7-0f-9u8" id="yWk-R9-zwW"/>
+                                    <outlet property="savedBeerView" destination="uu7-0f-9u8" id="Vj5-fr-eW5"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -157,7 +166,50 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7tB-k3-ya3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1893.5999999999999" y="138.98050974512745"/>
+            <point key="canvasLocation" x="1878" y="-371"/>
+        </scene>
+        <!--Poured Table View Controller-->
+        <scene sceneID="ESw-k6-MZl">
+            <objects>
+                <tableViewController id="Rgp-dQ-5vF" customClass="PouredTableViewController" customModule="Cold_One" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" id="ipN-JS-qOb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="pouredCell" rowHeight="80" id="pcG-eI-aPZ" customClass="PouredBeerCell" customModule="Cold_One" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="80"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pcG-eI-aPZ" id="uOk-xB-mnG">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AgU-Xt-OLQ" customClass="PouredBeerView" customModule="Cold_One" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="AgU-Xt-OLQ" firstAttribute="top" secondItem="uOk-xB-mnG" secondAttribute="top" id="Hdz-cy-ldA"/>
+                                        <constraint firstAttribute="trailing" secondItem="AgU-Xt-OLQ" secondAttribute="trailing" id="QSk-nh-R67"/>
+                                        <constraint firstAttribute="bottom" secondItem="AgU-Xt-OLQ" secondAttribute="bottom" id="ehE-Ga-Lhy"/>
+                                        <constraint firstItem="AgU-Xt-OLQ" firstAttribute="leading" secondItem="uOk-xB-mnG" secondAttribute="leading" id="zuu-gM-1En"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="pouredBeerView" destination="AgU-Xt-OLQ" id="PgM-c0-egI"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Rgp-dQ-5vF" id="ppP-Rl-zoM"/>
+                            <outlet property="delegate" destination="Rgp-dQ-5vF" id="Jei-R3-Eb4"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IOS-H9-5Uw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1865" y="387"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="YVn-zt-F6u">
