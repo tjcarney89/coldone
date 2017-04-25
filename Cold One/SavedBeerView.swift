@@ -8,11 +8,18 @@
 
 import UIKit
 
+protocol BeerDelegate {
+    func reloadData()
+}
+
 class SavedBeerView: UIView {
 
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var beerNameLabel: UILabel!
     @IBOutlet weak var breweryLabel: UILabel!
+    
+    let cdStore = CoreDataStack.sharedInstance
+    var delegate: BeerDelegate?
     
     var brew: Brew! {
         
@@ -41,6 +48,15 @@ class SavedBeerView: UIView {
         contentView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
         contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         contentView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+    }
+    
+    
+    @IBAction func pourButtonTapped(_ sender: Any) {
+        brew.isPoured = true
+        brew.isSaved = false
+        cdStore.saveContext()
+        delegate?.reloadData()
+
     }
 
 }

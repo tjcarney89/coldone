@@ -69,6 +69,9 @@ final class CoreDataStack {
         do {
             self.savedBrews = try context.fetch(savedBrewFetchRequest)
             self.pouredBrews = try context.fetch(pouredBrewFetchRequest)
+            self.pouredBrews.sort(by: { (brew1, brew2) -> Bool in
+                brew1.isFavorite && !brew2.isFavorite
+            })
         } catch {
             
         }

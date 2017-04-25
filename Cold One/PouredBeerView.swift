@@ -15,11 +15,18 @@ class PouredBeerView: UIView {
     @IBOutlet weak var breweryLabel: UILabel!
     @IBOutlet weak var favoriteButton: UIButton!
     
+    let cdStore = CoreDataStack.sharedInstance
+    
+    
+    
     var brew: Brew! {
         
         didSet {
             beerNameLabel.text = brew.name
             breweryLabel.text = brew.brewery
+            if brew.isFavorite {
+                favoriteButton.setImage(#imageLiteral(resourceName: "filled star"), for: .normal)
+            }
         }
     }
     
@@ -43,17 +50,19 @@ class PouredBeerView: UIView {
         contentView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
         contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         contentView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        
     }
     
     
     @IBAction func favoriteButtonTapped(_ sender: Any) {
-        print("GETTING TAPPED")
         if favoriteButton.imageView?.image == #imageLiteral(resourceName: "empty star") {
-            print("EMPTY STAR!")
             favoriteButton.setImage(#imageLiteral(resourceName: "filled star"), for: .normal)
-        } else {
+            brew.isFavorite = true
+            cdStore.saveContext()
+        } else if favoriteButton.imageView?.image == #imageLiteral(resourceName: "filled star") {
             favoriteButton.setImage(#imageLiteral(resourceName: "empty star"), for: .normal)
+            brew.isFavorite = false
+            cdStore.saveContext()
+            
         }
     }
     

@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BeerView" customModule="Cold_One" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SavedBeerView" customModule="Cold_One" customModuleProvider="target">
             <connections>
                 <outlet property="beerNameLabel" destination="CyB-h3-MWb" id="K9a-8J-g1k"/>
                 <outlet property="breweryLabel" destination="k0F-WH-HAO" id="Lfk-Qb-PSZ"/>
@@ -35,8 +35,15 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RnD-cy-Wzf">
-                    <rect key="frame" x="327" y="6" width="32" height="30"/>
+                    <rect key="frame" x="309" y="6" width="50" height="34"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="NIr-cU-RkX"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <state key="normal" title="Pour"/>
+                    <connections>
+                        <action selector="pourButtonTapped:" destination="-1" eventType="touchUpInside" id="KWc-L5-hJk"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -51,6 +58,7 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="33.5" y="54"/>
         </view>
     </objects>
 </document>

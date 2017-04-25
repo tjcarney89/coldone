@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SavedTableViewController: UITableViewController {
+class SavedTableViewController: UITableViewController, BeerDelegate {
     
     let store = BeerDataStore.shared
     let cdStore = CoreDataStack.sharedInstance
@@ -38,6 +38,7 @@ class SavedTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "beerCell", for: indexPath) as! SavedBeerCell
         let currentBrew = cdStore.savedBrews[indexPath.row]
         cell.savedBeerView.brew = currentBrew
+        cell.savedBeerView.delegate = self
 
         // Configure the cell...
 
@@ -90,4 +91,11 @@ class SavedTableViewController: UITableViewController {
     }
     */
 
+}
+
+extension SavedTableViewController {
+    func reloadData() {
+        cdStore.fetchData()
+        tableView.reloadData()
+    }
 }
