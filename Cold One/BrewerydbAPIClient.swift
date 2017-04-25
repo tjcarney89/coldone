@@ -48,7 +48,7 @@ final class BrewerydbAPIClient {
         }
     }
     
-    class func getBreweryID(name: String, completion: @escaping (String) -> ()) {
+    class func getBreweryID(name: String, completion: @escaping (String, String) -> ()) {
         let urlString = "http://api.brewerydb.com/v2/breweries?key=\(Secret.apiKey)&name=\(name)"
         guard let urlStringEncoded = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {return}
         if let url = URL(string: urlStringEncoded) {
@@ -57,8 +57,9 @@ final class BrewerydbAPIClient {
                 if let data = data {
                     let json = JSON(data: data)
                     let idArray = json["data"].arrayValue.map({$0["id"].stringValue})
-                    if let id = idArray.first {
-                        completion(id)
+                    let nameArray = json["data"].arrayValue.map({$0["name"].stringValue})
+                    if let id = idArray.first, let name = nameArray.first {
+                        completion(id, name)
                     }
                 }
             })
@@ -66,7 +67,7 @@ final class BrewerydbAPIClient {
         }
     }
     
-    class func getBeersForBrewery(id: String, completion: @escaping ([Beer]) -> ()) {
+    class func getBeersForBrewery(id: String, brewery: String, completion: @escaping ([Beer]) -> ()) {
         var beers = [Beer]()
         let urlString = "http://api.brewerydb.com/v2/brewery/\(id)/beers?key=\(Secret.apiKey)"
         if let url = URL(string: urlString) {
@@ -80,7 +81,7 @@ final class BrewerydbAPIClient {
                         let id = beer["id"].stringValue
                         let style = beer["style"]["name"].stringValue
                         let abv = beer["abv"].stringValue
-                        let beer = Beer(name: name, id: id, abv: abv, style: style)
+                        let beer = Beer(name: name, id: id, abv: abv, style: style, brewery: brewery)
                         beers.append(beer)
                     }
                     completion(beers)

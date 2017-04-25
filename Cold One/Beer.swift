@@ -29,11 +29,12 @@ class Beer {
         self.style = style
     }
     
-     init(name: String, id: String, abv: String, style: String) {
+    init(name: String, id: String, abv: String, style: String, brewery: String) {
         self.name = name
         self.id = id
         self.abv = abv
         self.style = style
+        self.brewery = brewery
     }
     
 }
