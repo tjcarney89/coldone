@@ -72,20 +72,6 @@
                                     <action selector="pourButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="x0Q-E1-Qew"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XmH-Mt-qso">
-                                <rect key="frame" x="273" y="123" width="86" height="30"/>
-                                <state key="normal" title="Saved Beers"/>
-                                <connections>
-                                    <segue destination="Vyq-ex-AGN" kind="show" id="Ri5-EF-LuZ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bBB-ll-4Ee">
-                                <rect key="frame" x="16" y="123" width="93" height="30"/>
-                                <state key="normal" title="Poured Beers"/>
-                                <connections>
-                                    <segue destination="Rgp-dQ-5vF" kind="show" id="XPk-SJ-uuI"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -94,11 +80,8 @@
                             <constraint firstItem="xzm-1r-ndm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7Of-JC-Pao"/>
                             <constraint firstItem="9Ft-R8-otv" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="7Qu-2a-ulq"/>
                             <constraint firstItem="Qvs-cu-2a8" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="138" id="7V8-68-tMV"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="XmH-Mt-qso" secondAttribute="trailing" id="8hx-D7-SEd"/>
-                            <constraint firstItem="bBB-ll-4Ee" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="59" id="GQ1-kl-3jG"/>
                             <constraint firstItem="SaT-rZ-hWz" firstAttribute="top" secondItem="Qvs-cu-2a8" secondAttribute="bottom" constant="20" id="GSH-Sr-llN"/>
                             <constraint firstItem="SaT-rZ-hWz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Kak-C3-6w0"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="bBB-ll-4Ee" secondAttribute="leading" id="Ldu-or-qfd"/>
                             <constraint firstItem="9Ft-R8-otv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YoN-hb-oZL"/>
                             <constraint firstItem="OiV-UW-ubc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="80" id="ZdU-kb-oOM"/>
                             <constraint firstItem="Bdq-us-zhR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bQf-9u-XYP"/>
@@ -109,7 +92,6 @@
                             <constraint firstItem="SaT-rZ-hWz" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.9" id="jbP-tY-qst"/>
                             <constraint firstAttribute="trailingMargin" secondItem="d7e-wo-o5q" secondAttribute="trailing" constant="80" id="nLi-Dn-CAO"/>
                             <constraint firstItem="Qvs-cu-2a8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="peR-gU-Drr"/>
-                            <constraint firstItem="XmH-Mt-qso" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="59" id="ql1-IE-I8H"/>
                             <constraint firstItem="Qvs-cu-2a8" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="uxO-dV-MLX"/>
                             <constraint firstItem="xzm-1r-ndm" firstAttribute="top" secondItem="SaT-rZ-hWz" secondAttribute="bottom" constant="20" id="xaw-jx-SSU"/>
                         </constraints>
@@ -124,7 +106,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3696.8000000000002" y="-58.020989505247378"/>
+            <point key="canvasLocation" x="3625" y="-169"/>
         </scene>
         <!--Saved Table View Controller-->
         <scene sceneID="2bR-Pg-4z4">
@@ -167,7 +149,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7tB-k3-ya3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4452" y="-513"/>
+            <point key="canvasLocation" x="1737" y="643"/>
         </scene>
         <!--Poured Table View Controller-->
         <scene sceneID="ESw-k6-MZl">
@@ -210,7 +192,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IOS-H9-5Uw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4452" y="255.92203898050977"/>
+            <point key="canvasLocation" x="1737" y="1351"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="EnG-Za-ExS">
@@ -224,30 +206,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VQf-Th-Qvk">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VQf-Th-Qvk">
                                 <rect key="frame" x="135" y="104" width="105" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Search by Beer"/>
                                 <connections>
                                     <segue destination="eoY-sx-SO8" kind="show" id="kmx-kM-5Xp"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hJo-w2-olK">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hJo-w2-olK">
                                 <rect key="frame" x="123" y="174" width="129" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Search by Brewery"/>
                                 <connections>
                                     <segue destination="wPq-vL-iwk" kind="show" id="ooe-Tu-347"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bBB-ll-4Ee">
+                                <rect key="frame" x="141" y="244" width="93" height="30"/>
+                                <state key="normal" title="Poured Beers"/>
+                                <connections>
+                                    <segue destination="Rgp-dQ-5vF" kind="show" id="XPk-SJ-uuI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XmH-Mt-qso">
+                                <rect key="frame" x="144.5" y="314" width="86" height="30"/>
+                                <state key="normal" title="Saved Beers"/>
+                                <connections>
+                                    <segue destination="Vyq-ex-AGN" kind="show" id="Ri5-EF-LuZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hJo-w2-olK" firstAttribute="centerX" secondItem="8nW-eU-IaN" secondAttribute="centerX" id="9IA-Qk-z9l"/>
+                            <constraint firstItem="bBB-ll-4Ee" firstAttribute="centerX" secondItem="8nW-eU-IaN" secondAttribute="centerX" id="PwZ-xc-fxx"/>
+                            <constraint firstItem="XmH-Mt-qso" firstAttribute="top" secondItem="bBB-ll-4Ee" secondAttribute="bottom" constant="40" id="c7R-AX-9ba"/>
+                            <constraint firstItem="hJo-w2-olK" firstAttribute="top" secondItem="VQf-Th-Qvk" secondAttribute="bottom" constant="40" id="cC2-fE-xB0"/>
+                            <constraint firstItem="VQf-Th-Qvk" firstAttribute="centerX" secondItem="8nW-eU-IaN" secondAttribute="centerX" id="cEe-Qf-Fw6"/>
+                            <constraint firstItem="XmH-Mt-qso" firstAttribute="centerX" secondItem="8nW-eU-IaN" secondAttribute="centerX" id="czM-Cg-mE5"/>
+                            <constraint firstItem="bBB-ll-4Ee" firstAttribute="top" secondItem="hJo-w2-olK" secondAttribute="bottom" constant="40" id="qo9-dk-ZJ1"/>
+                            <constraint firstItem="VQf-Th-Qvk" firstAttribute="top" secondItem="O3K-V0-KJl" secondAttribute="bottom" constant="40" id="zou-Nt-Awc"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="MTZ-aO-eZc"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rVA-lO-FoW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2143.1999999999998" y="138.98050974512745"/>
+            <point key="canvasLocation" x="879" y="121"/>
         </scene>
         <!--Brewery Search View Controller-->
         <scene sceneID="GuG-j3-mSz">
@@ -314,7 +318,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O8C-6S-5cS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2956" y="518.59070464767615"/>
+            <point key="canvasLocation" x="1737" y="-77"/>
         </scene>
         <!--Beer Search View Controller-->
         <scene sceneID="YK4-bt-OUR">
@@ -381,7 +385,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5D3-wJ-aTT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2956" y="-226.23688155922042"/>
+            <point key="canvasLocation" x="1737" y="-743"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="L5G-R1-neP">
@@ -399,7 +403,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dgA-tR-ClQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1204" y="138.98050974512745"/>
+            <point key="canvasLocation" x="44" y="121"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
