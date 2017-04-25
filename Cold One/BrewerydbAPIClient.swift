@@ -48,4 +48,49 @@ final class BrewerydbAPIClient {
         }
     }
     
+    class func getBreweryID(name: String, completion: @escaping (String) -> ()) {
+        let urlString = "http://api.brewerydb.com/v2/breweries?key=\(Secret.apiKey)&name=\(name)"
+        guard let urlStringEncoded = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {return}
+        if let url = URL(string: urlStringEncoded) {
+            let session = URLSession.shared
+            let dataTask = session.dataTask(with: url, completionHandler: { (data, response, error) in
+                if let data = data {
+                    let json = JSON(data: data)
+                    let idArray = json["data"].arrayValue.map({$0["id"].stringValue})
+                    if let id = idArray.first {
+                        completion(id)
+                    }
+                }
+            })
+            dataTask.resume()
+        }
+    }
+    
+    class func getBeersForBrewery(id: String, completion: @escaping ([Beer]) -> ()) {
+        var beers = [Beer]()
+        let urlString = "http://api.brewerydb.com/v2/brewery/\(id)/beers?key=\(Secret.apiKey)"
+        if let url = URL(string: urlString) {
+            let session = URLSession.shared
+            let dataTask = session.dataTask(with: url) { (data, response, error) in
+                if let data = data {
+                    let json = JSON(data: data)
+                    let beerArray = json["data"].arrayValue
+                    for beer in beerArray {
+                        let name = beer["nameDisplay"].stringValue
+                        let id = beer["id"].stringValue
+                        let style = beer["style"]["name"].stringValue
+                        let abv = beer["abv"].stringValue
+                        let beer = Beer(name: name, id: id, abv: abv, style: style)
+                        beers.append(beer)
+                    }
+                    completion(beers)
+                }
+            }
+            dataTask.resume()
+        }
+        
+    }
+    
+    
+    
 }

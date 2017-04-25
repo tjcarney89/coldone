@@ -29,6 +29,13 @@ class Beer {
         self.style = style
     }
     
+     init(name: String, id: String, abv: String, style: String) {
+        self.name = name
+        self.id = id
+        self.abv = abv
+        self.style = style
+    }
+    
 }
 
 extension Beer: CustomStringConvertible {

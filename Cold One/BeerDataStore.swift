@@ -14,6 +14,7 @@ final class BeerDataStore {
     
     var savedBeers = [Beer]()
     var pouredBeers = [Beer]()
+    var currentBreweryBeers = [Beer]()
     
     func getBeer(name: String, completion: @escaping (Beer) -> ()) {
         BrewerydbAPIClient.getBeer(name: name) { (beer) in
@@ -23,5 +24,15 @@ final class BeerDataStore {
             })
         }
 
+    }
+    
+    func getBreweryBeers(name: String, completion: @escaping () -> ()) {
+        currentBreweryBeers.removeAll()
+        BrewerydbAPIClient.getBreweryID(name: name) { (id) in
+            BrewerydbAPIClient.getBeersForBrewery(id: id, completion: { (beers) in
+                self.currentBreweryBeers = beers
+                completion()
+            })
+        }
     }
 }

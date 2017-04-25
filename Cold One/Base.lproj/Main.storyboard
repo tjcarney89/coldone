@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="uyf-3J-VyU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="LOo-CE-KNe">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -26,6 +26,10 @@
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="9Ft-R8-otv">
                                 <rect key="frame" x="0.0" y="64" width="375" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
                             </searchBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qvs-cu-2a8">
                                 <rect key="frame" x="37.5" y="202" width="300" height="30"/>
@@ -123,7 +127,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1076" y="138.98050974512745"/>
+            <point key="canvasLocation" x="2001" y="-239"/>
         </scene>
         <!--Saved Table View Controller-->
         <scene sceneID="2bR-Pg-4z4">
@@ -166,7 +170,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7tB-k3-ya3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1878" y="-371"/>
+            <point key="canvasLocation" x="2782" y="-774"/>
         </scene>
         <!--Poured Table View Controller-->
         <scene sceneID="ESw-k6-MZl">
@@ -209,25 +213,110 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IOS-H9-5Uw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1865" y="387"/>
+            <point key="canvasLocation" x="2782" y="-107"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="YVn-zt-F6u">
+        <!--Home View Controller-->
+        <scene sceneID="EnG-Za-ExS">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uyf-3J-VyU" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Yar-WO-bxz">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="HjJ-AD-mXD"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eV0-nI-GPo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="LOo-CE-KNe" customClass="HomeViewController" customModule="Cold_One" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="O3K-V0-KJl"/>
+                        <viewControllerLayoutGuide type="bottom" id="eaL-QL-RAl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8nW-eU-IaN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VQf-Th-Qvk">
+                                <rect key="frame" x="135" y="104" width="105" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Search by Beer"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="ax7-p4-9Xz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hJo-w2-olK">
+                                <rect key="frame" x="123" y="174" width="129" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Search by Brewery"/>
+                                <connections>
+                                    <segue destination="wPq-vL-iwk" kind="show" id="ooe-Tu-347"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="MTZ-aO-eZc"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rVA-lO-FoW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-52" y="139"/>
+            <point key="canvasLocation" x="1204" y="138.98050974512745"/>
+        </scene>
+        <!--Brewery Search View Controller-->
+        <scene sceneID="GuG-j3-mSz">
+            <objects>
+                <viewController id="wPq-vL-iwk" customClass="BrewerySearchViewController" customModule="Cold_One" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VGw-AV-iSL"/>
+                        <viewControllerLayoutGuide type="bottom" id="hyZ-Ny-VEn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="40g-Ki-xOu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="f9i-YT-Tg4">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OQZ-zR-Tr6">
+                                <rect key="frame" x="0.0" y="95" width="375" height="572"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="breweryCell" rowHeight="80" id="JI0-bw-Sj2" customClass="BeerCell" customModule="Cold_One" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JI0-bw-Sj2" id="b3S-md-ZEy">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="byJ-Os-Z6q" customClass="BeerView" customModule="Cold_One" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="byJ-Os-Z6q" firstAttribute="leading" secondItem="b3S-md-ZEy" secondAttribute="leading" id="2sa-QM-knw"/>
+                                                <constraint firstItem="byJ-Os-Z6q" firstAttribute="trailing" secondItem="b3S-md-ZEy" secondAttribute="trailing" id="FaX-s6-JjX"/>
+                                                <constraint firstItem="byJ-Os-Z6q" firstAttribute="top" secondItem="b3S-md-ZEy" secondAttribute="top" id="L3B-YH-Ya5"/>
+                                                <constraint firstItem="byJ-Os-Z6q" firstAttribute="bottom" secondItem="b3S-md-ZEy" secondAttribute="bottom" id="fVP-b5-0n2"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="beerView" destination="byJ-Os-Z6q" id="Jte-p5-y0y"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="f9i-YT-Tg4" firstAttribute="centerX" secondItem="40g-Ki-xOu" secondAttribute="centerX" id="BER-ca-p17"/>
+                            <constraint firstAttribute="trailing" secondItem="OQZ-zR-Tr6" secondAttribute="trailing" id="EHy-B2-rdA"/>
+                            <constraint firstItem="OQZ-zR-Tr6" firstAttribute="leading" secondItem="40g-Ki-xOu" secondAttribute="leading" id="LJJ-Tl-hnq"/>
+                            <constraint firstItem="OQZ-zR-Tr6" firstAttribute="top" secondItem="f9i-YT-Tg4" secondAttribute="bottom" constant="23" id="Nz4-XL-Ccd"/>
+                            <constraint firstItem="hyZ-Ny-VEn" firstAttribute="top" secondItem="OQZ-zR-Tr6" secondAttribute="bottom" id="OJh-rX-ZWZ"/>
+                            <constraint firstItem="f9i-YT-Tg4" firstAttribute="top" secondItem="VGw-AV-iSL" secondAttribute="bottom" constant="8" id="vYm-iy-it3"/>
+                            <constraint firstItem="f9i-YT-Tg4" firstAttribute="width" secondItem="40g-Ki-xOu" secondAttribute="width" id="wSb-l7-qft"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="brewerySearchBar" destination="f9i-YT-Tg4" id="jF6-gR-kI7"/>
+                        <outlet property="searchResultsTableView" destination="OQZ-zR-Tr6" id="2v3-6w-K5b"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O8C-6S-5cS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1999.2" y="444.82758620689657"/>
         </scene>
     </scenes>
 </document>
