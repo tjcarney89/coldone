@@ -18,6 +18,7 @@ class BeerDetailViewController: UIViewController {
     
     var beer: Beer?
     let store = BeerDataStore.shared
+    let cdStore = CoreDataStack.sharedInstance
     
     
 
@@ -40,8 +41,11 @@ class BeerDetailViewController: UIViewController {
  
     @IBAction func saveButtonTapped(_ sender: Any) {
         if let beer = beer {
-            store.savedBeers.append(beer)
-            print(store.savedBeers)
+            let context = cdStore.persistentContainer.viewContext
+            let newBrew = cdStore.makeBrew(beer: beer)
+            newBrew.isSaved = true
+            cdStore.savedBrews.append(newBrew)
+            cdStore.saveContext()
         }
 
     }
@@ -49,9 +53,14 @@ class BeerDetailViewController: UIViewController {
 
     @IBAction func pourButtonTapped(_ sender: Any) {
         if let beer = beer {
-            store.pouredBeers.append(beer)
-            print(store.pouredBeers)
+            let context = cdStore.persistentContainer.viewContext
+            let newBrew = cdStore.makeBrew(beer: beer)
+            newBrew.isSaved = false
+            newBrew.isPoured = true
+            cdStore.pouredBrews.append(newBrew)
+            cdStore.saveContext()
         }
+
     }
     
 

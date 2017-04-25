@@ -14,11 +14,11 @@ class SavedBeerView: UIView {
     @IBOutlet weak var beerNameLabel: UILabel!
     @IBOutlet weak var breweryLabel: UILabel!
     
-    var beer: Beer! {
+    var brew: Brew! {
         
         didSet {
-            beerNameLabel.text = beer.name
-            breweryLabel.text = beer.brewery
+            beerNameLabel.text = brew.name
+            breweryLabel.text = brew.brewery
         }
     }
     

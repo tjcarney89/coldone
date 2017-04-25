@@ -11,9 +11,11 @@ import UIKit
 class SavedTableViewController: UITableViewController {
     
     let store = BeerDataStore.shared
+    let cdStore = CoreDataStack.sharedInstance
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        cdStore.fetchData()
         print("SAVED: \(store.savedBeers)")
 
     }
@@ -28,15 +30,14 @@ class SavedTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return store.savedBeers.count
+        return cdStore.savedBrews.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "beerCell", for: indexPath) as! SavedBeerCell
-        let currentBeer = store.savedBeers[indexPath.row]
-        print(currentBeer)
-        cell.savedBeerView.beer = currentBeer
+        let currentBrew = cdStore.savedBrews[indexPath.row]
+        cell.savedBeerView.brew = currentBrew
 
         // Configure the cell...
 

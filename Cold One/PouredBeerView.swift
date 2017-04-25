@@ -15,11 +15,11 @@ class PouredBeerView: UIView {
     @IBOutlet weak var breweryLabel: UILabel!
     @IBOutlet weak var favoriteButton: UIButton!
     
-    var beer: Beer! {
+    var brew: Brew! {
         
         didSet {
-            beerNameLabel.text = beer.name
-            breweryLabel.text = beer.brewery
+            beerNameLabel.text = brew.name
+            breweryLabel.text = brew.brewery
         }
     }
     

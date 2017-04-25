@@ -16,7 +16,6 @@
 		F034AFBE1EAE2F0700DC5B15 /* Brewery.swift in Sources */ = {isa = PBXBuildFile; fileRef = F034AFBD1EAE2F0700DC5B15 /* Brewery.swift */; };
 		F034AFC01EAE2F0E00DC5B15 /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F034AFBF1EAE2F0E00DC5B15 /* Beer.swift */; };
 		F034AFC21EAE4B5500DC5B15 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = F034AFC11EAE4B5500DC5B15 /* Secret.swift */; };
-		F034AFC71EAE6A7700DC5B15 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F034AFC61EAE6A7700DC5B15 /* SearchViewController.swift */; };
 		F034AFC91EAE78F800DC5B15 /* BeerDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F034AFC81EAE78F800DC5B15 /* BeerDataStore.swift */; };
 		F034AFCB1EAE7AD400DC5B15 /* SavedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F034AFCA1EAE7AD400DC5B15 /* SavedTableViewController.swift */; };
 		F034AFCD1EAE7C0A00DC5B15 /* SavedBeerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F034AFCC1EAE7C0A00DC5B15 /* SavedBeerView.xib */; };
@@ -33,6 +32,8 @@
 		F034AFE61EAEA6A400DC5B15 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F034AFE51EAEA6A400DC5B15 /* HomeViewController.swift */; };
 		F034AFE81EAF866500DC5B15 /* BeerSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F034AFE71EAF866500DC5B15 /* BeerSearchViewController.swift */; };
 		F034AFEA1EAF969000DC5B15 /* BeerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F034AFE91EAF969000DC5B15 /* BeerDetailViewController.swift */; };
+		F034AFED1EAFDA4A00DC5B15 /* Brew.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F034AFEB1EAFDA4A00DC5B15 /* Brew.xcdatamodeld */; };
+		F034AFEF1EAFDA9600DC5B15 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F034AFEE1EAFDA9600DC5B15 /* CoreDataStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,7 +49,6 @@
 		F034AFBD1EAE2F0700DC5B15 /* Brewery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Brewery.swift; sourceTree = "<group>"; };
 		F034AFBF1EAE2F0E00DC5B15 /* Beer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beer.swift; sourceTree = "<group>"; };
 		F034AFC11EAE4B5500DC5B15 /* Secret.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
-		F034AFC61EAE6A7700DC5B15 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		F034AFC81EAE78F800DC5B15 /* BeerDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeerDataStore.swift; sourceTree = "<group>"; };
 		F034AFCA1EAE7AD400DC5B15 /* SavedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedTableViewController.swift; sourceTree = "<group>"; };
 		F034AFCC1EAE7C0A00DC5B15 /* SavedBeerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SavedBeerView.xib; sourceTree = "<group>"; };
@@ -65,6 +65,8 @@
 		F034AFE51EAEA6A400DC5B15 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F034AFE71EAF866500DC5B15 /* BeerSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeerSearchViewController.swift; sourceTree = "<group>"; };
 		F034AFE91EAF969000DC5B15 /* BeerDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeerDetailViewController.swift; sourceTree = "<group>"; };
+		F034AFEC1EAFDA4A00DC5B15 /* Brew.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Brew.xcdatamodel; sourceTree = "<group>"; };
+		F034AFEE1EAFDA9600DC5B15 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		FBB0D7E29756CCCF6FDECF39 /* Pods-Cold One.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cold One.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cold One/Pods-Cold One.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -125,6 +127,7 @@
 				F034AFC41EAE690C00DC5B15 /* Utility */,
 				F034AFC11EAE4B5500DC5B15 /* Secret.swift */,
 				F034AFAD1EAE2C9300DC5B15 /* Main.storyboard */,
+				F034AFEB1EAFDA4A00DC5B15 /* Brew.xcdatamodeld */,
 				F034AFB01EAE2C9300DC5B15 /* Assets.xcassets */,
 				F034AFB21EAE2C9300DC5B15 /* LaunchScreen.storyboard */,
 				F034AFB51EAE2C9300DC5B15 /* Info.plist */,
@@ -146,6 +149,7 @@
 			children = (
 				F034AFBB1EAE2D2100DC5B15 /* BrewerydbAPIClient.swift */,
 				F034AFC81EAE78F800DC5B15 /* BeerDataStore.swift */,
+				F034AFEE1EAFDA9600DC5B15 /* CoreDataStack.swift */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -153,13 +157,12 @@
 		F034AFC51EAE692400DC5B15 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				F034AFC61EAE6A7700DC5B15 /* SearchViewController.swift */,
-				F034AFE91EAF969000DC5B15 /* BeerDetailViewController.swift */,
-				F034AFDB1EAE9D8100DC5B15 /* BrewerySearchViewController.swift */,
+				F034AFE51EAEA6A400DC5B15 /* HomeViewController.swift */,
 				F034AFE71EAF866500DC5B15 /* BeerSearchViewController.swift */,
+				F034AFDB1EAE9D8100DC5B15 /* BrewerySearchViewController.swift */,
+				F034AFE91EAF969000DC5B15 /* BeerDetailViewController.swift */,
 				F034AFCA1EAE7AD400DC5B15 /* SavedTableViewController.swift */,
 				F034AFD31EAE860700DC5B15 /* PouredTableViewController.swift */,
-				F034AFE51EAEA6A400DC5B15 /* HomeViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -168,13 +171,13 @@
 			isa = PBXGroup;
 			children = (
 				F034AFCC1EAE7C0A00DC5B15 /* SavedBeerView.xib */,
-				F034AFD51EAE864900DC5B15 /* PouredBeerView.xib */,
-				F034AFDD1EAE9E8500DC5B15 /* BeerView.xib */,
-				F034AFE11EAEA15800DC5B15 /* BeerView.swift */,
 				F034AFCE1EAE7C5500DC5B15 /* SavedBeerView.swift */,
+				F034AFD01EAE7E8000DC5B15 /* SavedBeerCell.swift */,
+				F034AFD51EAE864900DC5B15 /* PouredBeerView.xib */,
 				F034AFD71EAE867000DC5B15 /* PouredBeerView.swift */,
 				F034AFD91EAE88F500DC5B15 /* PouredBeerCell.swift */,
-				F034AFD01EAE7E8000DC5B15 /* SavedBeerCell.swift */,
+				F034AFDD1EAE9E8500DC5B15 /* BeerView.xib */,
+				F034AFE11EAEA15800DC5B15 /* BeerView.swift */,
 				F034AFE31EAEA1DD00DC5B15 /* BeerCell.swift */,
 			);
 			name = Views;
@@ -311,7 +314,6 @@
 				F034AFD41EAE860700DC5B15 /* PouredTableViewController.swift in Sources */,
 				F034AFE61EAEA6A400DC5B15 /* HomeViewController.swift in Sources */,
 				F034AFDC1EAE9D8100DC5B15 /* BrewerySearchViewController.swift in Sources */,
-				F034AFC71EAE6A7700DC5B15 /* SearchViewController.swift in Sources */,
 				F034AFCB1EAE7AD400DC5B15 /* SavedTableViewController.swift in Sources */,
 				F034AFC21EAE4B5500DC5B15 /* Secret.swift in Sources */,
 				F034AFE41EAEA1DD00DC5B15 /* BeerCell.swift in Sources */,
@@ -322,8 +324,10 @@
 				F034AFCF1EAE7C5500DC5B15 /* SavedBeerView.swift in Sources */,
 				F034AFD11EAE7E8000DC5B15 /* SavedBeerCell.swift in Sources */,
 				F034AFD81EAE867000DC5B15 /* PouredBeerView.swift in Sources */,
+				F034AFEF1EAFDA9600DC5B15 /* CoreDataStack.swift in Sources */,
 				F034AFEA1EAF969000DC5B15 /* BeerDetailViewController.swift in Sources */,
 				F034AFDA1EAE88F500DC5B15 /* PouredBeerCell.swift in Sources */,
+				F034AFED1EAFDA4A00DC5B15 /* Brew.xcdatamodeld in Sources */,
 				F034AFE21EAEA15800DC5B15 /* BeerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -491,6 +495,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F034AFEB1EAFDA4A00DC5B15 /* Brew.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F034AFEC1EAFDA4A00DC5B15 /* Brew.xcdatamodel */,
+			);
+			currentVersion = F034AFEC1EAFDA4A00DC5B15 /* Brew.xcdatamodel */;
+			path = Brew.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = F034AF9E1EAE2C9200DC5B15 /* Project object */;
 }
