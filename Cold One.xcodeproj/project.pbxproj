@@ -34,6 +34,7 @@
 		F034AFEA1EAF969000DC5B15 /* BeerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F034AFE91EAF969000DC5B15 /* BeerDetailViewController.swift */; };
 		F034AFED1EAFDA4A00DC5B15 /* Brew.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F034AFEB1EAFDA4A00DC5B15 /* Brew.xcdatamodeld */; };
 		F034AFEF1EAFDA9600DC5B15 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F034AFEE1EAFDA9600DC5B15 /* CoreDataStack.swift */; };
+		F034AFF11EB0E55E00DC5B15 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F034AFF01EB0E55E00DC5B15 /* LocationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +68,7 @@
 		F034AFE91EAF969000DC5B15 /* BeerDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeerDetailViewController.swift; sourceTree = "<group>"; };
 		F034AFEC1EAFDA4A00DC5B15 /* Brew.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Brew.xcdatamodel; sourceTree = "<group>"; };
 		F034AFEE1EAFDA9600DC5B15 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		F034AFF01EB0E55E00DC5B15 /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		FBB0D7E29756CCCF6FDECF39 /* Pods-Cold One.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cold One.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cold One/Pods-Cold One.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -163,6 +165,7 @@
 				F034AFE91EAF969000DC5B15 /* BeerDetailViewController.swift */,
 				F034AFCA1EAE7AD400DC5B15 /* SavedTableViewController.swift */,
 				F034AFD31EAE860700DC5B15 /* PouredTableViewController.swift */,
+				F034AFF01EB0E55E00DC5B15 /* LocationViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 				TargetAttributes = {
 					F034AFA51EAE2C9200DC5B15 = {
 						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = X3V4LZU6AD;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -309,6 +313,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F034AFF11EB0E55E00DC5B15 /* LocationViewController.swift in Sources */,
 				F034AFC91EAE78F800DC5B15 /* BeerDataStore.swift in Sources */,
 				F034AFBE1EAE2F0700DC5B15 /* Brewery.swift in Sources */,
 				F034AFD41EAE860700DC5B15 /* PouredTableViewController.swift in Sources */,
@@ -452,6 +457,7 @@
 			baseConfigurationReference = FBB0D7E29756CCCF6FDECF39 /* Pods-Cold One.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = X3V4LZU6AD;
 				INFOPLIST_FILE = "Cold One/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "TJ.Cold-One";
@@ -465,6 +471,7 @@
 			baseConfigurationReference = 1F2803DCB84217BA6297BBC4 /* Pods-Cold One.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = X3V4LZU6AD;
 				INFOPLIST_FILE = "Cold One/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "TJ.Cold-One";
