@@ -89,15 +89,12 @@ final class BrewerydbAPIClient {
             }
             dataTask.resume()
         }
-        
     }
     
     class func getBreweryByLocation(latitude: Double, longitude: Double, radius: Int, completion: @escaping ([Brewery]) -> ()) {
-        print("GETTING CALLED")
         var breweries = [Brewery]()
         let urlString = "http://api.brewerydb.com/v2/search/geo/point?key=\(Secret.apiKey)&lat=\(latitude)&lng=\(longitude)&radius=\(radius)"
         if let url = URL(string: urlString) {
-            print("GOT URL")
             let session = URLSession.shared
             let dataTask = session.dataTask(with: url, completionHandler: { (data, response, error) in
                 if let data = data {
@@ -106,8 +103,8 @@ final class BrewerydbAPIClient {
                     for brewery in breweryArray {
                         let name = brewery["brewery"]["name"].stringValue
                         let id = brewery["brewery"]["id"].stringValue
-                        let address = brewery["streetAddress"].stringValue
-                        let locality = brewery["locality"].stringValue
+                        let address = brewery["streetAddress"].string
+                        let locality = brewery["locality"].string
                         let region = brewery["region"].stringValue
                         let type = brewery["locationTypeDisplay"].stringValue
                         let distance = brewery["distance"].doubleValue
@@ -120,7 +117,7 @@ final class BrewerydbAPIClient {
             dataTask.resume()
         }
     }
-    
+        
     
     
 }

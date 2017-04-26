@@ -16,12 +16,12 @@ final class BeerDataStore {
     var pouredBeers = [Beer]()
     var currentBreweryBeers = [Beer]()
     var currentBeer = [Beer]()
+    var breweries = [Brewery]()
     
     func getBeer(name: String, completion: @escaping (Beer) -> ()) {
         currentBeer.removeAll()
         BrewerydbAPIClient.getBeer(name: name) { (beer) in
             BrewerydbAPIClient.getBeerBrewery(beer: beer, completion: { (newBeer) in
-                print("BEER: \(newBeer)")
                 self.currentBeer.append(newBeer)
                 completion(newBeer)
             })
@@ -36,6 +36,13 @@ final class BeerDataStore {
                 self.currentBreweryBeers = beers
                 completion()
             })
+        }
+    }
+    
+    func getBreweries(latitude: Double, longitude: Double, radius: Int, completion: @escaping () -> ()) {
+        BrewerydbAPIClient.getBreweryByLocation(latitude: latitude, longitude: longitude, radius: radius) { (breweries) in
+            self.breweries = breweries
+            completion()
         }
     }
 }

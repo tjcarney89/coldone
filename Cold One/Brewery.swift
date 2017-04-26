@@ -9,16 +9,30 @@
 import Foundation
 import SwiftyJSON
 
-struct Brewery {
+class Brewery {
     
     var id = String()
     var name = String()
-    var locality = String()
+    var locality: String?
     var region = String()
     var type = String()
     var address: String?
     var beers = [Beer]()
     var distance = Double()
+    var hasAddress: Bool {
+        if address == nil {
+            return false
+        } else {
+            return true
+        }
+    }
+    var hasLocality: Bool {
+        if locality == nil {
+            return false
+        } else {
+            return true
+        }
+    }
     
 //    init(dict: JSON) {
 //        let idArray = dict["data"]["brewery"].arrayValue.map({$0["id"].stringValue})
@@ -34,7 +48,7 @@ struct Brewery {
 //        self.distance = dict["data"]["distance"].doubleValue
 //    }
     
-    init(name: String, id: String, locality: String, region: String, type: String, address: String, distance: Double) {
+    init(name: String, id: String, locality: String?, region: String, type: String, address: String?, distance: Double) {
         self.name = name
         self.id = id
         self.locality = locality

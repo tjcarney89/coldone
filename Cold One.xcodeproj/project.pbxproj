@@ -35,6 +35,10 @@
 		F034AFED1EAFDA4A00DC5B15 /* Brew.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F034AFEB1EAFDA4A00DC5B15 /* Brew.xcdatamodeld */; };
 		F034AFEF1EAFDA9600DC5B15 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F034AFEE1EAFDA9600DC5B15 /* CoreDataStack.swift */; };
 		F034AFF11EB0E55E00DC5B15 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F034AFF01EB0E55E00DC5B15 /* LocationViewController.swift */; };
+		F034AFF31EB0F57000DC5B15 /* BreweryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F034AFF21EB0F57000DC5B15 /* BreweryView.xib */; };
+		F034AFF51EB0F59300DC5B15 /* BreweryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F034AFF41EB0F59300DC5B15 /* BreweryView.swift */; };
+		F034AFF71EB0F8C400DC5B15 /* BreweryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F034AFF61EB0F8C400DC5B15 /* BreweryCell.swift */; };
+		F034AFF91EB1254600DC5B15 /* BreweryBeerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F034AFF81EB1254500DC5B15 /* BreweryBeerTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +73,10 @@
 		F034AFEC1EAFDA4A00DC5B15 /* Brew.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Brew.xcdatamodel; sourceTree = "<group>"; };
 		F034AFEE1EAFDA9600DC5B15 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		F034AFF01EB0E55E00DC5B15 /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		F034AFF21EB0F57000DC5B15 /* BreweryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BreweryView.xib; sourceTree = "<group>"; };
+		F034AFF41EB0F59300DC5B15 /* BreweryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreweryView.swift; sourceTree = "<group>"; };
+		F034AFF61EB0F8C400DC5B15 /* BreweryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreweryCell.swift; sourceTree = "<group>"; };
+		F034AFF81EB1254500DC5B15 /* BreweryBeerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreweryBeerTableViewController.swift; sourceTree = "<group>"; };
 		FBB0D7E29756CCCF6FDECF39 /* Pods-Cold One.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cold One.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cold One/Pods-Cold One.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -166,6 +174,7 @@
 				F034AFCA1EAE7AD400DC5B15 /* SavedTableViewController.swift */,
 				F034AFD31EAE860700DC5B15 /* PouredTableViewController.swift */,
 				F034AFF01EB0E55E00DC5B15 /* LocationViewController.swift */,
+				F034AFF81EB1254500DC5B15 /* BreweryBeerTableViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -182,6 +191,9 @@
 				F034AFDD1EAE9E8500DC5B15 /* BeerView.xib */,
 				F034AFE11EAEA15800DC5B15 /* BeerView.swift */,
 				F034AFE31EAEA1DD00DC5B15 /* BeerCell.swift */,
+				F034AFF21EB0F57000DC5B15 /* BreweryView.xib */,
+				F034AFF41EB0F59300DC5B15 /* BreweryView.swift */,
+				F034AFF61EB0F8C400DC5B15 /* BreweryCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -251,6 +263,7 @@
 			files = (
 				F034AFB41EAE2C9300DC5B15 /* LaunchScreen.storyboard in Resources */,
 				F034AFDE1EAE9E8500DC5B15 /* BeerView.xib in Resources */,
+				F034AFF31EB0F57000DC5B15 /* BreweryView.xib in Resources */,
 				F034AFD61EAE864900DC5B15 /* PouredBeerView.xib in Resources */,
 				F034AFB11EAE2C9300DC5B15 /* Assets.xcassets in Resources */,
 				F034AFCD1EAE7C0A00DC5B15 /* SavedBeerView.xib in Resources */,
@@ -320,16 +333,19 @@
 				F034AFE61EAEA6A400DC5B15 /* HomeViewController.swift in Sources */,
 				F034AFDC1EAE9D8100DC5B15 /* BrewerySearchViewController.swift in Sources */,
 				F034AFCB1EAE7AD400DC5B15 /* SavedTableViewController.swift in Sources */,
+				F034AFF51EB0F59300DC5B15 /* BreweryView.swift in Sources */,
 				F034AFC21EAE4B5500DC5B15 /* Secret.swift in Sources */,
 				F034AFE41EAEA1DD00DC5B15 /* BeerCell.swift in Sources */,
 				F034AFC01EAE2F0E00DC5B15 /* Beer.swift in Sources */,
 				F034AFE81EAF866500DC5B15 /* BeerSearchViewController.swift in Sources */,
+				F034AFF91EB1254600DC5B15 /* BreweryBeerTableViewController.swift in Sources */,
 				F034AFAA1EAE2C9200DC5B15 /* AppDelegate.swift in Sources */,
 				F034AFBC1EAE2D2100DC5B15 /* BrewerydbAPIClient.swift in Sources */,
 				F034AFCF1EAE7C5500DC5B15 /* SavedBeerView.swift in Sources */,
 				F034AFD11EAE7E8000DC5B15 /* SavedBeerCell.swift in Sources */,
 				F034AFD81EAE867000DC5B15 /* PouredBeerView.swift in Sources */,
 				F034AFEF1EAFDA9600DC5B15 /* CoreDataStack.swift in Sources */,
+				F034AFF71EB0F8C400DC5B15 /* BreweryCell.swift in Sources */,
 				F034AFEA1EAF969000DC5B15 /* BeerDetailViewController.swift in Sources */,
 				F034AFDA1EAE88F500DC5B15 /* PouredBeerCell.swift in Sources */,
 				F034AFED1EAFDA4A00DC5B15 /* Brew.xcdatamodeld in Sources */,
