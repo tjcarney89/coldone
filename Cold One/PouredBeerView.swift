@@ -17,10 +17,7 @@ class PouredBeerView: UIView {
     
     let cdStore = CoreDataStack.sharedInstance
     
-    
-    
     var brew: Brew! {
-        
         didSet {
             beerNameLabel.text = brew.name
             breweryLabel.text = brew.brewery
@@ -29,8 +26,6 @@ class PouredBeerView: UIView {
             }
         }
     }
-    
-    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -52,7 +47,6 @@ class PouredBeerView: UIView {
         contentView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
     }
     
-    
     @IBAction func favoriteButtonTapped(_ sender: Any) {
         if favoriteButton.imageView?.image == #imageLiteral(resourceName: "empty star") {
             favoriteButton.setImage(#imageLiteral(resourceName: "filled star"), for: .normal)
@@ -62,9 +56,6 @@ class PouredBeerView: UIView {
             favoriteButton.setImage(#imageLiteral(resourceName: "empty star"), for: .normal)
             brew.isFavorite = false
             cdStore.saveContext()
-            
         }
     }
-    
-    
 }

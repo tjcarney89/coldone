@@ -12,10 +12,11 @@ class BreweryBeerViewController: UIViewController, UITableViewDelegate, UITableV
     
     @IBOutlet weak var beerTableView: UITableView!
     
-    
     let loadingView = UIView()
     let loadingLabel = UILabel()
+    
     let store = BeerDataStore.shared
+    
     var brewery: Brewery?
 
     override func viewDidLoad() {
@@ -26,24 +27,20 @@ class BreweryBeerViewController: UIViewController, UITableViewDelegate, UITableV
         setUpLoadingView()
         setUpLoadingLabel()
         getBeers()
-
-        // Do any additional setup after loading the view.
     }
     
     func getBeers() {
         if let brewery = brewery {
-            store.getBreweryBeers(name: brewery.name) {
+            store.searchBreweries(name: brewery.name) {
                 DispatchQueue.main.async {
                     self.beerTableView.reloadData()
                     self.loadingView.isHidden = true
                     self.beerTableView.isHidden = false
-                    print("RELOADED DATA")
                     if self.store.currentBreweryBeers.count == 0 {
                         let myAlert = UIAlertController(title: "No Beer!", message: "Sorry, no beers found for this brewery", preferredStyle: .alert)
                         let okAction = UIAlertAction(title: "OK", style: .destructive, handler: nil)
                         myAlert.addAction(okAction)
                         self.present(myAlert, animated: true)
-                        print("NO BEERS")
                     }
                 }
             }
@@ -52,12 +49,10 @@ class BreweryBeerViewController: UIViewController, UITableViewDelegate, UITableV
 
 
      func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return store.currentBreweryBeers.count
     }
     
@@ -73,16 +68,12 @@ class BreweryBeerViewController: UIViewController, UITableViewDelegate, UITableV
         return 80
     }
 
-    
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier != "beerDetailSegue" {return}
         if let destVC = segue.destination as? BeerDetailViewController, let indexPath = beerTableView.indexPathForSelectedRow {
             let selectedBeer = store.currentBreweryBeers[indexPath.row]
             destVC.beer = selectedBeer
-            
         }
-        
     }
     
     func setUpLoadingView() {
@@ -109,6 +100,4 @@ class BreweryBeerViewController: UIViewController, UITableViewDelegate, UITableV
         loadingLabel.heightAnchor.constraint(equalTo: loadingView.heightAnchor, multiplier: 0.35).isActive = true
         loadingLabel.widthAnchor.constraint(equalTo: loadingView.widthAnchor, multiplier: 0.7).isActive = true
     }
-
-
 }

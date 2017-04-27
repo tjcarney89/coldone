@@ -20,20 +20,26 @@ class BeerSearchViewController: UIViewController, UITableViewDelegate, UITableVi
         beerSearchBar.delegate = self
         searchResultsTableView.delegate = self
         searchResultsTableView.dataSource = self
-        
-        // Do any additional setup after loading the view.
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if let search = searchBar.text {
-            print("SEARCH: \(search)")
-            store.getBeer(name: search, completion: { (beer) in
+            store.searchBeers(name: search, completion: { (beers) in
                 DispatchQueue.main.async {
                     self.searchResultsTableView.reloadData()
                 }
             })
+//            store.getBeer(name: search, completion: { (beer) in
+//                DispatchQueue.main.async {
+//                    self.searchResultsTableView.reloadData()
+//                }
+//            })
         }
-
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        store.currentBeer.removeAll()
+        searchResultsTableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -51,21 +57,13 @@ class BeerSearchViewController: UIViewController, UITableViewDelegate, UITableVi
         return cell
     }
     
-    
-
-    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier != "beerDetailSegue" {return}
         if let destVC = segue.destination as? BeerDetailViewController, let indexPath = searchResultsTableView.indexPathForSelectedRow {
             let selectedBeer = store.currentBeer[indexPath.row]
             destVC.beer = selectedBeer
-            
         }
-        
     }
-    
-
 }

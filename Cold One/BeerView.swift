@@ -15,13 +15,11 @@ class BeerView: UIView {
     @IBOutlet weak var beerStyleLabel: UILabel!
     
     var beer: Beer! {
-        
         didSet {
             beerNameLabel.text = beer.name
             beerStyleLabel.text = beer.style
         }
     }
-    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -42,8 +40,4 @@ class BeerView: UIView {
         contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         contentView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
     }
-    
-    
-
-
 }

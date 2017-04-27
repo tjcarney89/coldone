@@ -17,7 +17,6 @@ class BreweryView: UIView {
     @IBOutlet weak var breweryDistanceLabel: UILabel!
     
     var brewery: Brewery! {
-        
         didSet {
             breweryNameLabel.text = brewery.name
             breweryTypeLabel.text = brewery.type
@@ -51,5 +50,4 @@ class BreweryView: UIView {
         contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         contentView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
     }
-
 }

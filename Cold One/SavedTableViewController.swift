@@ -16,22 +16,15 @@ class SavedTableViewController: UITableViewController, BeerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         cdStore.fetchData()
-        for brew in cdStore.savedBrews {
-            print(brew.name)
-        }
-
     }
-
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return cdStore.savedBrews.count
     }
 
@@ -41,9 +34,6 @@ class SavedTableViewController: UITableViewController, BeerDelegate {
         let currentBrew = cdStore.savedBrews[indexPath.row]
         cell.savedBeerView.brew = currentBrew
         cell.savedBeerView.delegate = self
-
-        // Configure the cell...
-
         return cell
     }
     
@@ -53,10 +43,8 @@ class SavedTableViewController: UITableViewController, BeerDelegate {
             cdStore.savedBrews.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
             cdStore.deleteBrew(brew: currentBrew)
-            
         }
     }
-    
 }
 
 extension SavedTableViewController {

@@ -12,5 +12,4 @@ class BreweryCell: UITableViewCell {
     
     @IBOutlet weak var breweryView: BreweryView!
     
-
 }

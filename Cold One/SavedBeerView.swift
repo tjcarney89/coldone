@@ -19,16 +19,14 @@ class SavedBeerView: UIView {
     @IBOutlet weak var breweryLabel: UILabel!
     
     let cdStore = CoreDataStack.sharedInstance
-    var delegate: BeerDelegate?
     
+    var delegate: BeerDelegate?
     var brew: Brew! {
-        
         didSet {
             beerNameLabel.text = brew.name
             breweryLabel.text = brew.brewery
         }
     }
-    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -50,13 +48,10 @@ class SavedBeerView: UIView {
         contentView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
     }
     
-    
     @IBAction func pourButtonTapped(_ sender: Any) {
         brew.isPoured = true
         brew.isSaved = false
         cdStore.saveContext()
         delegate?.reloadData()
-
     }
-
 }

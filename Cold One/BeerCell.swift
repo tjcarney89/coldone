@@ -9,10 +9,7 @@
 import UIKit
 
 class BeerCell: UITableViewCell {
-
-    @IBOutlet weak var beerView: BeerView!
-   
-    @IBOutlet weak var breweryBeerView: BeerView!
-
     
+    @IBOutlet weak var beerView: BeerView!
+    @IBOutlet weak var breweryBeerView: BeerView!
 }

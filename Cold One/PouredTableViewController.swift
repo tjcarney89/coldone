@@ -16,18 +16,15 @@ class PouredTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         cdStore.fetchData()
-
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return cdStore.pouredBrews.count
     }
 
@@ -36,9 +33,6 @@ class PouredTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "pouredCell", for: indexPath) as! PouredBeerCell
         let currentBrew = cdStore.pouredBrews[indexPath.row]
         cell.pouredBeerView.brew = currentBrew
-
-        // Configure the cell...
-
         return cell
     }
     
@@ -48,7 +42,6 @@ class PouredTableViewController: UITableViewController {
             cdStore.pouredBrews.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
             cdStore.deleteBrew(brew: currentBrew)
-            
         }
     }
 }

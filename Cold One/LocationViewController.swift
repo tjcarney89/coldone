@@ -14,8 +14,8 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, UITab
     @IBOutlet weak var breweryTableView: UITableView!
     @IBOutlet weak var radiusPickerView: UIPickerView!
     
-    
     let store = BeerDataStore.shared
+    
     var locationManager: CLLocationManager!
     var latitude = Double()
     var longitude = Double()
@@ -30,8 +30,6 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, UITab
         radiusPickerView.delegate = self
         radiusPickerView.dataSource = self
         determineLocation()
-        
-        // Do any additional setup after loading the view.
     }
     
     
@@ -50,7 +48,6 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, UITab
         return cell
     }
     
-    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -62,6 +59,7 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, UITab
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return String(radiusArray[row])
     }
+    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selectedRadius = radiusArray[row] as Int
     }
@@ -97,16 +95,11 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, UITab
     
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier != "breweryBeerSegue" {return}
         if let destVC = segue.destination as? BreweryBeerViewController, let indexPath = breweryTableView.indexPathForSelectedRow {
             let selectedBrewery = store.breweries[indexPath.row]
             destVC.brewery = selectedBrewery
-            
         }
-
     }
-    
-
 }

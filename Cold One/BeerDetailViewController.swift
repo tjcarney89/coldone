@@ -15,13 +15,11 @@ class BeerDetailViewController: UIViewController {
     @IBOutlet weak var styleLabel: UILabel!
     @IBOutlet weak var abvLabel: UILabel!
     
-    
     var beer: Beer?
+    
     let store = BeerDataStore.shared
     let cdStore = CoreDataStack.sharedInstance
     
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         if let beer = beer {
@@ -30,15 +28,8 @@ class BeerDetailViewController: UIViewController {
             styleLabel.text = "Style: \(beer.style)"
             abvLabel.text = "ABV: \(beer.abv)"
         }
-        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
- 
     @IBAction func saveButtonTapped(_ sender: Any) {
         if let beer = beer {
             let context = cdStore.persistentContainer.viewContext
@@ -47,7 +38,6 @@ class BeerDetailViewController: UIViewController {
             cdStore.savedBrews.append(newBrew)
             cdStore.saveContext()
         }
-
     }
     
 
@@ -60,21 +50,5 @@ class BeerDetailViewController: UIViewController {
             cdStore.pouredBrews.append(newBrew)
             cdStore.saveContext()
         }
-
     }
-    
-
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

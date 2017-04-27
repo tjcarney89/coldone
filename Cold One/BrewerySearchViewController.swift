@@ -15,27 +15,28 @@ class BrewerySearchViewController: UIViewController, UITableViewDelegate, UITabl
     
     let store = BeerDataStore.shared
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         store.currentBreweryBeers.removeAll()
         brewerySearchBar.delegate = self
         searchResultsTableView.delegate = self
         searchResultsTableView.dataSource = self
-
-        // Do any additional setup after loading the view.
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if let search = brewerySearchBar.text {
-            store.getBreweryBeers(name: search, completion: {
+            store.searchBreweries(name: search, completion: {
                 DispatchQueue.main.async {
                     self.searchResultsTableView.reloadData()
+
                 }
-                
             })
+//            store.getBreweryBeers(name: search, completion: {
+//                DispatchQueue.main.async {
+//                    self.searchResultsTableView.reloadData()
+//                }
+//            })
         }
-        
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -58,9 +59,6 @@ class BrewerySearchViewController: UIViewController, UITableViewDelegate, UITabl
         return cell
     }
 
-        
-
-    
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -68,9 +66,6 @@ class BrewerySearchViewController: UIViewController, UITableViewDelegate, UITabl
         if let destVC = segue.destination as? BeerDetailViewController, let indexPath = searchResultsTableView.indexPathForSelectedRow {
             let selectedBeer = store.currentBreweryBeers[indexPath.row]
             destVC.beer = selectedBeer
-            
         }
-        
     }
-
 }
