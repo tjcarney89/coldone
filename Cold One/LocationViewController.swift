@@ -100,7 +100,7 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, UITab
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier != "breweryBeerSegue" {return}
-        if let destVC = segue.destination as? BreweryBeerTableViewController, let indexPath = breweryTableView.indexPathForSelectedRow {
+        if let destVC = segue.destination as? BreweryBeerViewController, let indexPath = breweryTableView.indexPathForSelectedRow {
             let selectedBrewery = store.breweries[indexPath.row]
             destVC.brewery = selectedBrewery
             

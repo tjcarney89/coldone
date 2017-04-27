@@ -145,7 +145,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="breweryView" destination="zze-e8-cST" id="I6f-mR-sWG"/>
-                                            <segue destination="eQq-Hd-vG8" kind="show" identifier="breweryBeerSegue" id="Yi6-NC-den"/>
+                                            <segue destination="Efs-GP-BnH" kind="show" identifier="breweryBeerSegue" id="WSb-cK-j5p"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -193,49 +193,64 @@
             </objects>
             <point key="canvasLocation" x="5808.8000000000002" y="169.56521739130437"/>
         </scene>
-        <!--Brewery Beer Table View Controller-->
-        <scene sceneID="3Rt-yM-TpL">
+        <!--Brewery Beer View Controller-->
+        <scene sceneID="gca-5D-DrR">
             <objects>
-                <tableViewController id="eQq-Hd-vG8" customClass="BreweryBeerTableViewController" customModule="Cold_One" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="hIX-ks-dwp">
+                <viewController id="Efs-GP-BnH" customClass="BreweryBeerViewController" customModule="Cold_One" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3Yy-kH-UfE"/>
+                        <viewControllerLayoutGuide type="bottom" id="ehb-De-l0m"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fIM-QG-OVr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="A0y-eR-5Kf">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="breweryBeerCell" rowHeight="80" id="7J7-91-dD7" customClass="BeerCell" customModule="Cold_One" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7J7-91-dD7" id="jnA-7r-iRP">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J6T-GG-vbb" customClass="BeerView" customModule="Cold_One" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="J6T-GG-vbb" secondAttribute="trailing" id="3nt-I7-AYH"/>
+                                                <constraint firstItem="J6T-GG-vbb" firstAttribute="top" secondItem="jnA-7r-iRP" secondAttribute="top" id="6ca-ml-JmW"/>
+                                                <constraint firstItem="J6T-GG-vbb" firstAttribute="leading" secondItem="jnA-7r-iRP" secondAttribute="leading" id="NAs-8U-qi3"/>
+                                                <constraint firstAttribute="bottom" secondItem="J6T-GG-vbb" secondAttribute="bottom" id="iUc-ww-fuf"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="breweryBeerView" destination="J6T-GG-vbb" id="5FU-K1-3jA"/>
+                                            <segue destination="BYZ-38-t0r" kind="show" identifier="beerDetailSegue" id="kBV-NG-mkA"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="breweryBeerCell" rowHeight="80" id="bim-zG-GIZ" customClass="BeerCell" customModule="Cold_One" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="80"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bim-zG-GIZ" id="Rex-Oa-j4k">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VI1-Mz-tvo" customClass="BeerView" customModule="Cold_One" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="VI1-Mz-tvo" secondAttribute="trailing" id="VKn-c3-00D"/>
-                                        <constraint firstAttribute="bottom" secondItem="VI1-Mz-tvo" secondAttribute="bottom" id="VxV-gv-KAt"/>
-                                        <constraint firstItem="VI1-Mz-tvo" firstAttribute="leading" secondItem="Rex-Oa-j4k" secondAttribute="leading" id="XAh-y9-Tj4"/>
-                                        <constraint firstItem="VI1-Mz-tvo" firstAttribute="top" secondItem="Rex-Oa-j4k" secondAttribute="top" id="hp7-nN-9z4"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="breweryBeerView" destination="VI1-Mz-tvo" id="s2g-42-joU"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="beerDetailSegue" id="n6s-zp-oHN"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="eQq-Hd-vG8" id="zph-AU-l0y"/>
-                            <outlet property="delegate" destination="eQq-Hd-vG8" id="Xha-Jl-gYB"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qfs-pt-7LC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <constraints>
+                            <constraint firstItem="ehb-De-l0m" firstAttribute="top" secondItem="A0y-eR-5Kf" secondAttribute="bottom" id="6zZ-wE-VfK"/>
+                            <constraint firstItem="A0y-eR-5Kf" firstAttribute="top" secondItem="fIM-QG-OVr" secondAttribute="top" id="UeV-Y3-nTc"/>
+                            <constraint firstItem="A0y-eR-5Kf" firstAttribute="leading" secondItem="fIM-QG-OVr" secondAttribute="leading" id="tAd-Ca-I0Z"/>
+                            <constraint firstAttribute="trailing" secondItem="A0y-eR-5Kf" secondAttribute="trailing" id="w0M-gh-mb5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="beerTableView" destination="A0y-eR-5Kf" id="ycu-To-cL7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IQp-LN-xXb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6616.8000000000002" y="165.96701649175412"/>
+            <point key="canvasLocation" x="6695" y="170"/>
         </scene>
         <!--Saved Table View Controller-->
         <scene sceneID="2bR-Pg-4z4">
@@ -395,11 +410,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="f9i-YT-Tg4">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OQZ-zR-Tr6">
-                                <rect key="frame" x="0.0" y="95" width="375" height="572"/>
+                                <rect key="frame" x="0.0" y="139" width="375" height="528"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="breweryCell" rowHeight="80" id="JI0-bw-Sj2" customClass="BeerCell" customModule="Cold_One" customModuleProvider="target">
@@ -462,11 +477,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="DWc-uJ-aOz">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nZx-CV-Uk3">
-                                <rect key="frame" x="0.0" y="95" width="375" height="572"/>
+                                <rect key="frame" x="0.0" y="139" width="375" height="528"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="singleBeerCell" rowHeight="80" id="m5S-Dp-ue7" customClass="BeerCell" customModule="Cold_One" customModuleProvider="target">
@@ -554,6 +569,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="n6s-zp-oHN"/>
+        <segue reference="kBV-NG-mkA"/>
     </inferredMetricsTieBreakers>
 </document>
