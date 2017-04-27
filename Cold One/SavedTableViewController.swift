@@ -16,6 +16,9 @@ class SavedTableViewController: UITableViewController, BeerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         cdStore.fetchData()
+        for brew in cdStore.savedBrews {
+            print(brew.name)
+        }
 
     }
 
@@ -42,6 +45,16 @@ class SavedTableViewController: UITableViewController, BeerDelegate {
         // Configure the cell...
 
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let currentBrew = cdStore.savedBrews[indexPath.row]
+            cdStore.savedBrews.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            cdStore.deleteBrew(brew: currentBrew)
+            
+        }
     }
     
 }

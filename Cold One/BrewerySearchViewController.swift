@@ -18,6 +18,7 @@ class BrewerySearchViewController: UIViewController, UITableViewDelegate, UITabl
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        store.currentBreweryBeers.removeAll()
         brewerySearchBar.delegate = self
         searchResultsTableView.delegate = self
         searchResultsTableView.dataSource = self

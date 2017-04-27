@@ -41,6 +41,16 @@ class PouredTableViewController: UITableViewController {
 
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let currentBrew = cdStore.pouredBrews[indexPath.row]
+            cdStore.pouredBrews.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            cdStore.deleteBrew(brew: currentBrew)
+            
+        }
+    }
 }
 
 

@@ -90,5 +90,11 @@ final class CoreDataStack {
         return brew
     }
     
+    func deleteBrew(brew: Brew) {
+        let context = persistentContainer.viewContext
+        context.delete(brew)
+        saveContext()
+    }
+    
     
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="SnV-Jw-H6C">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="brZ-q2-san">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -106,7 +106,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3134" y="-434"/>
+            <point key="canvasLocation" x="4072.8000000000002" y="-434.03298350824593"/>
         </scene>
         <!--Location View Controller-->
         <scene sceneID="FRY-8Q-YAD">
@@ -191,7 +191,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vll-ZY-AVv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5808.8000000000002" y="169.56521739130437"/>
+            <point key="canvasLocation" x="-132" y="973"/>
         </scene>
         <!--Brewery Beer View Controller-->
         <scene sceneID="gca-5D-DrR">
@@ -250,7 +250,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IQp-LN-xXb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6695" y="170"/>
+            <point key="canvasLocation" x="753" y="973"/>
         </scene>
         <!--Saved Table View Controller-->
         <scene sceneID="2bR-Pg-4z4">
@@ -293,7 +293,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7tB-k3-ya3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1737" y="643"/>
+            <point key="canvasLocation" x="2676" y="642.72863568215894"/>
         </scene>
         <!--Poured Table View Controller-->
         <scene sceneID="ESw-k6-MZl">
@@ -378,6 +378,14 @@
                                     <segue destination="Vyq-ex-AGN" kind="show" id="Ri5-EF-LuZ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j47-5a-i9r">
+                                <rect key="frame" x="112" y="381" width="151" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Breweries by Location"/>
+                                <connections>
+                                    <segue destination="DAb-VZ-9i2" kind="show" id="7J9-XF-oPN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -395,7 +403,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rVA-lO-FoW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="879" y="121"/>
+            <point key="canvasLocation" x="1816.8" y="120.98950524737631"/>
         </scene>
         <!--Brewery Search View Controller-->
         <scene sceneID="GuG-j3-mSz">
@@ -462,7 +470,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O8C-6S-5cS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1737" y="-77"/>
+            <point key="canvasLocation" x="2676" y="-77.811094452773617"/>
         </scene>
         <!--Beer Search View Controller-->
         <scene sceneID="YK4-bt-OUR">
@@ -532,40 +540,22 @@
             <point key="canvasLocation" x="1737" y="-743"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="L5G-R1-neP">
+        <scene sceneID="NIJ-GW-C23">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YVn-nU-b0l" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="brZ-q2-san" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="IHw-xX-SEc">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VQU-Ik-qcm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="LOo-CE-KNe" kind="relationship" relationship="rootViewController" id="jTx-UK-i0f"/>
+                        <segue destination="LOo-CE-KNe" kind="relationship" relationship="rootViewController" id="6yN-Yn-5Qh"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dgA-tR-ClQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nTA-8T-s1C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="44" y="121"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="XqL-yF-9r8">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SnV-Jw-H6C" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="LID-Zx-vqY">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="DAb-VZ-9i2" kind="relationship" relationship="rootViewController" id="CTu-7A-bqp"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="m82-56-jTn" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4869.6000000000004" y="169.56521739130437"/>
+            <point key="canvasLocation" x="877.60000000000002" y="120.98950524737631"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
