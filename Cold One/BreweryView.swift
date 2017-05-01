@@ -22,11 +22,11 @@ class BreweryView: UIView {
             breweryTypeLabel.text = brewery.type
             breweryDistanceLabel.text = String(describing: brewery.distance) + " miles"
             if brewery.hasAddress && brewery.hasLocality {
-                breweryAddressLabel.text = "\(brewery.address!), \(brewery.locality!), \(brewery.region)"
+                breweryAddressLabel.text = "\(brewery.address!), \(brewery.locality!), \(brewery.state)"
             } else if brewery.hasLocality && !brewery.hasAddress {
-                breweryAddressLabel.text = "\(brewery.locality!), \(brewery.region)"
+                breweryAddressLabel.text = "\(brewery.locality!), \(brewery.state)"
             } else if !brewery.hasLocality && !brewery.hasAddress {
-                breweryAddressLabel.text = brewery.region
+                breweryAddressLabel.text = brewery.state.name
             }
         }
     }

@@ -54,8 +54,9 @@ final class BrewerydbAPIClient {
                             let localityArray = brewery["locations"].arrayValue.map({$0["locality"].string})
                             let regionArray = brewery["locations"].arrayValue.map({$0["region"].stringValue})
                             let typeArray = brewery["locations"].arrayValue.map({$0["locationTypeDisplay"].stringValue})
-                            guard let breweryAddress = addressArray.first, let breweryLocality = localityArray.first, let breweryRegion = regionArray.first, let breweryType = typeArray.first else {return}
-                            let newBrewery = Brewery(name: breweryName, id: breweryID, locality: breweryLocality, region: breweryRegion, type: breweryType, address: breweryAddress, distance: nil)
+                            guard let breweryAddress = addressArray.first, let breweryLocality = localityArray.first, let breweryState = regionArray.first, let breweryType = typeArray.first else {return}
+                            let state = State(name: breweryState)
+                            let newBrewery = Brewery(name: breweryName, id: breweryID, locality: breweryLocality, state: state, type: breweryType, address: breweryAddress, distance: nil)
                             unwrappedBeerBrewery = newBrewery
                         }
                         guard let beerBrewery = unwrappedBeerBrewery else {return}
@@ -138,9 +139,10 @@ final class BrewerydbAPIClient {
                     if let brewery = breweryArray.first {
                         let address = brewery["streetAddress"].string
                         let locality = brewery["locality"].string
-                        let region = brewery["region"].stringValue
+                        let stateName = brewery["region"].stringValue
                         let type = brewery["locationTypeDisplay"].stringValue
-                        newBrewery = Brewery(name: name, id: id, locality: locality, region: region, type: type, address: address, distance: nil)
+                        let state = State(name: stateName)
+                        newBrewery = Brewery(name: name, id: id, locality: locality, state: state, type: type, address: address, distance: nil)
                         print("2. Got the Brewery: \(newBrewery)")
                     }
                 }
@@ -190,10 +192,11 @@ final class BrewerydbAPIClient {
                         let id = brewery["brewery"]["id"].stringValue
                         let address = brewery["streetAddress"].string
                         let locality = brewery["locality"].string
-                        let region = brewery["region"].stringValue
+                        let stateName = brewery["region"].stringValue
                         let type = brewery["locationTypeDisplay"].stringValue
                         let distance = brewery["distance"].doubleValue
-                        let newBrewery = Brewery(name: name, id: id, locality: locality, region: region, type: type, address: address, distance: distance)
+                        let state = State(name: stateName)
+                        let newBrewery = Brewery(name: name, id: id, locality: locality, state: state, type: type, address: address, distance: distance)
                         breweries.append(newBrewery)
                     }
                     completion(breweries)

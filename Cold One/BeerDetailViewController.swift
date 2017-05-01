@@ -27,6 +27,7 @@ class BeerDetailViewController: UIViewController {
             breweryLabel.text = "Brewed by \(brewery.name)"
             styleLabel.text = "Style: \(beer.style)"
             abvLabel.text = "ABV: \(beer.abv)"
+            print("This beer is from \(brewery.state.name) aka \(brewery.state.abbreviation)")
 
         }
     }
@@ -43,11 +44,12 @@ class BeerDetailViewController: UIViewController {
     
 
     @IBAction func pourButtonTapped(_ sender: Any) {
-        if let beer = beer {
+        if let beer = beer, let brewery = beer.brewery {
             let context = cdStore.persistentContainer.viewContext
             let newBrew = cdStore.makeBrew(beer: beer)
             newBrew.isSaved = false
             newBrew.isPoured = true
+            print("You just tried a beer from \(brewery.state)!")
             cdStore.pouredBrews.append(newBrew)
             cdStore.saveContext()
         }

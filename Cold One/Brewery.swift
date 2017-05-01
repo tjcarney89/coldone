@@ -14,7 +14,7 @@ class Brewery {
     var id = String()
     var name = String()
     var locality: String?
-    var region = String()
+    var state = State()
     var type = String()
     var address: String?
     var beers = [Beer]()
@@ -34,11 +34,11 @@ class Brewery {
         }
     }
         
-    init(name: String, id: String, locality: String?, region: String, type: String, address: String?, distance: Double?) {
+    init(name: String, id: String, locality: String?, state: State, type: String, address: String?, distance: Double?) {
         self.name = name
         self.id = id
         self.locality = locality
-        self.region = region
+        self.state = state
         self.type = type
         self.address = address
         self.distance = distance
@@ -49,9 +49,9 @@ class Brewery {
 extension Brewery: CustomStringConvertible {
     var description: String {
         if let address = self.address, let locality = self.locality {
-            return "NAME: \(name), ADDRESS: \(address), \(locality), \(region), TYPE: \(type), DISTANCE: \(distance) miles"
+            return "NAME: \(name), ADDRESS: \(address), \(locality), \(state), TYPE: \(type), DISTANCE: \(distance) miles"
         } else {
-            return "NAME: \(name), ADDRESS: \(locality), \(region), TYPE: \(type), DISTANCE: \(distance) miles"
+            return "NAME: \(name), ADDRESS: \(locality), \(state), TYPE: \(type), DISTANCE: \(distance) miles"
         }
     }
 }

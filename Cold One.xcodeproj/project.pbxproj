@@ -39,6 +39,7 @@
 		F034AFF51EB0F59300DC5B15 /* BreweryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F034AFF41EB0F59300DC5B15 /* BreweryView.swift */; };
 		F034AFF71EB0F8C400DC5B15 /* BreweryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F034AFF61EB0F8C400DC5B15 /* BreweryCell.swift */; };
 		F034AFFB1EB21FE400DC5B15 /* BreweryBeerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F034AFFA1EB21FE400DC5B15 /* BreweryBeerViewController.swift */; };
+		F09222591EB7C1D4006E9515 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09222581EB7C1D4006E9515 /* State.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +78,7 @@
 		F034AFF41EB0F59300DC5B15 /* BreweryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreweryView.swift; sourceTree = "<group>"; };
 		F034AFF61EB0F8C400DC5B15 /* BreweryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreweryCell.swift; sourceTree = "<group>"; };
 		F034AFFA1EB21FE400DC5B15 /* BreweryBeerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreweryBeerViewController.swift; sourceTree = "<group>"; };
+		F09222581EB7C1D4006E9515 /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		FBB0D7E29756CCCF6FDECF39 /* Pods-Cold One.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cold One.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cold One/Pods-Cold One.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -150,6 +152,7 @@
 			children = (
 				F034AFBF1EAE2F0E00DC5B15 /* Beer.swift */,
 				F034AFBD1EAE2F0700DC5B15 /* Brewery.swift */,
+				F09222581EB7C1D4006E9515 /* State.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				F034AFEA1EAF969000DC5B15 /* BeerDetailViewController.swift in Sources */,
 				F034AFDA1EAE88F500DC5B15 /* PouredBeerCell.swift in Sources */,
 				F034AFED1EAFDA4A00DC5B15 /* Brew.xcdatamodeld in Sources */,
+				F09222591EB7C1D4006E9515 /* State.swift in Sources */,
 				F034AFE21EAEA15800DC5B15 /* BeerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
