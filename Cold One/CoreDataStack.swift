@@ -62,7 +62,7 @@ final class CoreDataStack {
         let context = persistentContainer.viewContext
         let brew = Brew(context: context)
         brew.name = beer.name
-        brew.brewery = beer.brewery
+        brew.brewery = beer.brewery?.name
         brew.style = beer.style
         brew.abv = beer.abv
         brew.isFavorite = false

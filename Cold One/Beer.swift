@@ -15,7 +15,7 @@ class Beer {
     var name = String()
     var abv = String()
     var style = String()
-    var brewery: String = "No Brewery"
+    var brewery: Brewery?
     
 //    init(dict: JSON) {
 //        let idArray = dict["data"].arrayValue.map({$0["id"].stringValue})
@@ -30,7 +30,7 @@ class Beer {
 //    }
 //    
     
-    init(name: String, id: String, abv: String, style: String, brewery: String) {
+    init(name: String, id: String, abv: String, style: String, brewery: Brewery) {
         self.name = name
         self.id = id
         self.abv = abv

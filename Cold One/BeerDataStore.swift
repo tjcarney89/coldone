@@ -36,11 +36,15 @@ final class BeerDataStore {
     }
     
     func searchBreweries(name: String, completion: @escaping () -> ()) {
-        BrewerydbAPIClient.searchBrewery(name: name) { (id, brewery) in
-            BrewerydbAPIClient.getBeersForBrewery(id: id, brewery: brewery, completion: { (beers) in
-                self.currentBreweryBeers = beers
-                completion()
+        BrewerydbAPIClient.searchBrewery(name: name) { (id, name) in
+            BrewerydbAPIClient.getBreweryLocation(id: id, name: name, completion: { (brewery) in
+                guard let brewery = brewery else {return}
+                BrewerydbAPIClient.getBeersForBrewery(brewery: brewery, completion: { (beers) in
+                    self.currentBreweryBeers = beers
+                    completion()
+                })
             })
+            
         }
     }
     

@@ -22,11 +22,12 @@ class BeerDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let beer = beer {
+        if let beer = beer, let brewery = beer.brewery {
             beerNameLabel.text = beer.name
-            breweryLabel.text = "Brewed by \(beer.brewery)"
+            breweryLabel.text = "Brewed by \(brewery.name)"
             styleLabel.text = "Style: \(beer.style)"
             abvLabel.text = "ABV: \(beer.abv)"
+
         }
     }
 
