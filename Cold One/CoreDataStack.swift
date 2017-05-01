@@ -63,6 +63,7 @@ final class CoreDataStack {
         let brew = Brew(context: context)
         brew.name = beer.name
         brew.brewery = beer.brewery?.name
+        brew.state = beer.brewery?.state.name
         brew.style = beer.style
         brew.abv = beer.abv
         brew.isFavorite = false

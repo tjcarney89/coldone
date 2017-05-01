@@ -7,9 +7,10 @@
         <attribute name="isPoured" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="isSaved" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="state" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="style" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Brew" positionX="-63" positionY="-18" width="128" height="150"/>
+        <element name="Brew" positionX="-63" positionY="-18" width="128" height="165"/>
     </elements>
 </model>
