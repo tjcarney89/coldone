@@ -14,7 +14,7 @@ class StateView: UIView {
     @IBOutlet weak var stateLabel: UILabel!
     @IBOutlet weak var filledImageView: UIImageView!
     
-    var state: State! {
+    var state: USState! {
         
         didSet {
             stateLabel.text = state.name

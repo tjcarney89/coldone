@@ -47,6 +47,12 @@ class BeerDetailViewController: UIViewController {
         if let beer = beer, let brewery = beer.brewery {
             let context = cdStore.persistentContainer.viewContext
             let newBrew = cdStore.makeBrew(beer: beer)
+            for state in cdStore.states {
+                if brewery.state.name == state.name {
+                    newBrew.usstate = state
+                }
+            }
+            newBrew.usstate?.isFilled = true
             newBrew.isSaved = false
             newBrew.isPoured = true
             print("You just tried a beer from \(brewery.state)!")

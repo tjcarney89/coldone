@@ -51,6 +51,12 @@ class SavedBeerView: UIView {
     @IBAction func pourButtonTapped(_ sender: Any) {
         brew.isPoured = true
         brew.isSaved = false
+        for state in cdStore.states {
+            if brew.state == state.name {
+                brew.usstate = state
+            }
+        }
+        brew.usstate?.isFilled = true
         cdStore.saveContext()
         delegate?.reloadData()
     }

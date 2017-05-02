@@ -10,72 +10,17 @@ import UIKit
 
 class StatesTableViewController: UITableViewController {
     
-    let stateNames = ["Alaska",
-                  "Alabama",
-                  "Arkansas",
-                  "Arizona",
-                  "California",
-                  "Colorado",
-                  "Connecticut",
-                  "Delaware",
-                  "Florida",
-                  "Georgia",
-                  "Hawaii",
-                  "Iowa",
-                  "Idaho",
-                  "Illinois",
-                  "Indiana",
-                  "Kansas",
-                  "Kentucky",
-                  "Louisiana",
-                  "Massachusetts",
-                  "Maryland",
-                  "Maine",
-                  "Michigan",
-                  "Minnesota",
-                  "Missouri",
-                  "Mississippi",
-                  "Montana",
-                  "North Carolina",
-                  "North Dakota",
-                  "Nebraska",
-                  "New Hampshire",
-                  "New Jersey",
-                  "New Mexico",
-                  "Nevada",
-                  "New York",
-                  "Ohio",
-                  "Oklahoma",
-                  "Oregon",
-                  "Pennsylvania",
-                  "Rhode Island",
-                  "South Carolina",
-                  "South Dakota",
-                  "Tennessee",
-                  "Texas",
-                  "Utah",
-                  "Virginia",
-                  "Vermont",
-                  "Washington",
-                  "Wisconsin",
-                  "West Virginia",
-                  "Wyoming"]
-    var states = [State]()
+    let cdStore = CoreDataStack.sharedInstance
     
-    let bonusStates = ["American Samoa", "District of Columbia", "Guam", "Puerto Rico", "Virgin Islands"]
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        makeStates()
+        cdStore.fetchData()
+        if cdStore.states.count == 0 {
+            cdStore.makeStates()
+        }
 
     }
     
-    func makeStates() {
-        for state in stateNames {
-            let newState = State(name: state)
-            states.append(newState)
-        }
-    }
 
     // MARK: - Table view data source
     
@@ -90,13 +35,13 @@ class StatesTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return states.count
+        return cdStore.states.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "stateCell", for: indexPath) as! StateCell
-        let currentState = states[indexPath.row]
+        let currentState = cdStore.states[indexPath.row]
         cell.stateView.state = currentState
         return cell
     }

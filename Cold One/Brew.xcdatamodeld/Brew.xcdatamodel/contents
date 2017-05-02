@@ -8,9 +8,18 @@
         <attribute name="isSaved" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="state" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="stateFilled" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="style" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="usstate" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="USState" inverseName="brews" inverseEntity="USState" syncable="YES"/>
+    </entity>
+    <entity name="USState" representedClassName="USState" syncable="YES" codeGenerationType="class">
+        <attribute name="abbreviation" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isFilled" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="brews" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Brew" inverseName="usstate" inverseEntity="Brew" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Brew" positionX="-63" positionY="-18" width="128" height="165"/>
+        <element name="Brew" positionX="349" positionY="-36" width="128" height="195"/>
+        <element name="USState" positionX="-63" positionY="54" width="128" height="103"/>
     </elements>
 </model>
