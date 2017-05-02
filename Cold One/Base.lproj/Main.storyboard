@@ -325,6 +325,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="stateView" destination="3iY-Sx-kmL" id="qhP-Uz-SGY"/>
+                                    <segue destination="fHp-Dm-UKF" kind="show" identifier="stateDetailSegue" id="bni-8D-5Pr"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -336,7 +337,50 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rom-WE-cMb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="878" y="-722"/>
+            <point key="canvasLocation" x="-268" y="-743"/>
+        </scene>
+        <!--State Detail Table View Controller-->
+        <scene sceneID="v05-lq-oIX">
+            <objects>
+                <tableViewController id="fHp-Dm-UKF" customClass="StateDetailTableViewController" customModule="Cold_One" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Rm8-2v-egk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="stateDetailCell" id="Hk2-5M-Wig" customClass="PouredBeerCell" customModule="Cold_One" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Hk2-5M-Wig" id="RFD-uQ-jxT">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t6e-nh-45c" customClass="PouredBeerView" customModule="Cold_One" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="t6e-nh-45c" secondAttribute="trailing" id="6Me-eb-nVe"/>
+                                        <constraint firstItem="t6e-nh-45c" firstAttribute="leading" secondItem="RFD-uQ-jxT" secondAttribute="leading" id="f9g-uM-827"/>
+                                        <constraint firstAttribute="bottom" secondItem="t6e-nh-45c" secondAttribute="bottom" id="fJR-YW-5c8"/>
+                                        <constraint firstItem="t6e-nh-45c" firstAttribute="top" secondItem="RFD-uQ-jxT" secondAttribute="top" id="knW-Jj-d85"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="beerStateView" destination="t6e-nh-45c" id="21g-cK-qFK"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="fHp-Dm-UKF" id="wyA-96-JH4"/>
+                            <outlet property="delegate" destination="fHp-Dm-UKF" id="ILm-1t-qwN"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X7X-4H-VnN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="688" y="-738"/>
         </scene>
         <!--Poured Table View Controller-->
         <scene sceneID="ESw-k6-MZl">
@@ -454,7 +498,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rVA-lO-FoW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2756" y="120.98950524737631"/>
+            <point key="canvasLocation" x="1990" y="135"/>
         </scene>
         <!--Brewery Search View Controller-->
         <scene sceneID="GuG-j3-mSz">
@@ -606,7 +650,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dw4-31-hUM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1816.8" y="120.98950524737631"/>
+            <point key="canvasLocation" x="753" y="98"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

@@ -67,6 +67,7 @@ final class CoreDataStack {
                       "Wyoming"]
     
     var states: [USState] = []
+    
 
     
     

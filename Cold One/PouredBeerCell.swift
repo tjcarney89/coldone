@@ -11,5 +11,6 @@ import UIKit
 class PouredBeerCell: UITableViewCell {
 
     @IBOutlet weak var pouredBeerView: PouredBeerView!
+    @IBOutlet weak var beerStateView: PouredBeerView!
     
 }
