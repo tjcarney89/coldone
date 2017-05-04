@@ -18,6 +18,8 @@ final class BeerDataStore {
     var currentBeer = [Beer]()
     var breweries = [Brewery]()
     
+    var myGroup = DispatchGroup()
+    
 //    func getBeer(name: String, completion: @escaping (Beer) -> ()) {
 //        currentBeer.removeAll()
 //        BrewerydbAPIClient.getBeer(name: name) { (beer) in
@@ -46,6 +48,26 @@ final class BeerDataStore {
             })
             
         }
+    }
+    
+    func getBreweriesByState(state: String, completion: @escaping ([Brewery]) -> ()) {
+        var finalBreweries: [Brewery] = []
+        BrewerydbAPIClient.getNumberOfPages(state: state) { (pages) in
+            for i in 1...pages {
+                self.myGroup.enter()
+                BrewerydbAPIClient.getBreweriesByState(state: state, page: i, completion: { (breweries) in
+                    for brewery in breweries {
+                        finalBreweries.append(brewery)
+                    }
+                    self.myGroup.leave()
+                })
+            }
+            self.myGroup.notify(queue: DispatchQueue.main, execute: {
+                completion(finalBreweries)
+            })
+            
+        }
+        
     }
     
 //    func getBreweryBeers(name: String, completion: @escaping () -> ()) {

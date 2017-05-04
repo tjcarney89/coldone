@@ -205,4 +205,50 @@ final class BrewerydbAPIClient {
             dataTask.resume()
         }
     }
+    
+    class func getNumberOfPages(state: String, completion: @escaping (Int) -> ()) {
+        let urlString = "http://api.brewerydb.com/v2/locations?key=\(Secret.apiKey)&region=\(state)"
+        guard let urlStringEncoded = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {return}
+        if let url = URL(string: urlStringEncoded) {
+            let session = URLSession.shared
+            let dataTask = session.dataTask(with: url, completionHandler: { (data, response, error) in
+                if let data = data {
+                    let json = JSON(data: data)
+                    let pages = json["numberOfPages"].intValue
+                    completion(pages)
+                    
+                    
+                }
+            })
+            dataTask.resume()
+        }
+
+    }
+    class func getBreweriesByState(state: String, page: Int, completion: @escaping ([Brewery]) -> ()) {
+        var breweries = [Brewery]()
+            let urlString = "http://api.brewerydb.com/v2/locations?key=\(Secret.apiKey)&region=\(state)&p=\(page)"
+            guard let urlStringEncoded = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {return}
+            if let url = URL(string: urlStringEncoded) {
+                let session = URLSession.shared
+                let dataTask = session.dataTask(with: url, completionHandler: { (data, response, error) in
+                    if let data = data {
+                        let json = JSON(data: data)
+                        let breweryArray = json["data"].arrayValue
+                        for brewery in breweryArray {
+                            let name = brewery["brewery"]["name"].stringValue
+                            let id = brewery["brewery"]["id"].stringValue
+                            let address = brewery["streetAddress"].string
+                            let locality = brewery["locality"].string
+                            let stateName = brewery["region"].stringValue
+                            let type = brewery["locationTypeDisplay"].stringValue
+                            let state = State(name: stateName)
+                            let newBrewery = Brewery(name: name, id: id, locality: locality, state: state, type: type, address: address, distance: nil)
+                            breweries.append(newBrewery)
+                        }
+                        completion(breweries)
+                    }
+                })
+                dataTask.resume()
+            }
+    }
 }

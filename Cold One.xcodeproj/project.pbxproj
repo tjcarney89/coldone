@@ -44,7 +44,8 @@
 		F092225D1EB7CB54006E9515 /* StateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F092225C1EB7CB54006E9515 /* StateView.xib */; };
 		F092225F1EB7CB77006E9515 /* StateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F092225E1EB7CB77006E9515 /* StateView.swift */; };
 		F09222611EB7D042006E9515 /* StateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09222601EB7D042006E9515 /* StateCell.swift */; };
-		F09222631EB8D8DC006E9515 /* StateDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09222621EB8D8DC006E9515 /* StateDetailTableViewController.swift */; };
+		F09222651EB90BB5006E9515 /* StateDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09222641EB90BB5006E9515 /* StateDetailViewController.swift */; };
+		F09222671EB912BA006E9515 /* StateBreweryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09222661EB912BA006E9515 /* StateBreweryTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,7 +89,8 @@
 		F092225C1EB7CB54006E9515 /* StateView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StateView.xib; sourceTree = "<group>"; };
 		F092225E1EB7CB77006E9515 /* StateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateView.swift; sourceTree = "<group>"; };
 		F09222601EB7D042006E9515 /* StateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateCell.swift; sourceTree = "<group>"; };
-		F09222621EB8D8DC006E9515 /* StateDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateDetailTableViewController.swift; sourceTree = "<group>"; };
+		F09222641EB90BB5006E9515 /* StateDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateDetailViewController.swift; sourceTree = "<group>"; };
+		F09222661EB912BA006E9515 /* StateBreweryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateBreweryTableViewController.swift; sourceTree = "<group>"; };
 		FBB0D7E29756CCCF6FDECF39 /* Pods-Cold One.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cold One.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cold One/Pods-Cold One.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -189,7 +191,8 @@
 				F034AFF01EB0E55E00DC5B15 /* LocationViewController.swift */,
 				F034AFFA1EB21FE400DC5B15 /* BreweryBeerViewController.swift */,
 				F092225A1EB7CAA3006E9515 /* StatesTableViewController.swift */,
-				F09222621EB8D8DC006E9515 /* StateDetailTableViewController.swift */,
+				F09222641EB90BB5006E9515 /* StateDetailViewController.swift */,
+				F09222661EB912BA006E9515 /* StateBreweryTableViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F09222671EB912BA006E9515 /* StateBreweryTableViewController.swift in Sources */,
 				F034AFF11EB0E55E00DC5B15 /* LocationViewController.swift in Sources */,
 				F034AFC91EAE78F800DC5B15 /* BeerDataStore.swift in Sources */,
 				F034AFBE1EAE2F0700DC5B15 /* Brewery.swift in Sources */,
@@ -355,13 +359,13 @@
 				F034AFF51EB0F59300DC5B15 /* BreweryView.swift in Sources */,
 				F034AFC21EAE4B5500DC5B15 /* Secret.swift in Sources */,
 				F092225B1EB7CAA3006E9515 /* StatesTableViewController.swift in Sources */,
-				F09222631EB8D8DC006E9515 /* StateDetailTableViewController.swift in Sources */,
 				F034AFE41EAEA1DD00DC5B15 /* BeerCell.swift in Sources */,
 				F034AFC01EAE2F0E00DC5B15 /* Beer.swift in Sources */,
 				F034AFE81EAF866500DC5B15 /* BeerSearchViewController.swift in Sources */,
 				F034AFAA1EAE2C9200DC5B15 /* AppDelegate.swift in Sources */,
 				F034AFBC1EAE2D2100DC5B15 /* BrewerydbAPIClient.swift in Sources */,
 				F092225F1EB7CB77006E9515 /* StateView.swift in Sources */,
+				F09222651EB90BB5006E9515 /* StateDetailViewController.swift in Sources */,
 				F034AFCF1EAE7C5500DC5B15 /* SavedBeerView.swift in Sources */,
 				F034AFFB1EB21FE400DC5B15 /* BreweryBeerViewController.swift in Sources */,
 				F034AFD11EAE7E8000DC5B15 /* SavedBeerCell.swift in Sources */,

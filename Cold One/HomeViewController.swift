@@ -9,6 +9,8 @@
 import UIKit
 
 class HomeViewController: UIViewController {
+    
+    let store = BeerDataStore.shared
 
     override func viewDidLoad() {
         super.viewDidLoad()

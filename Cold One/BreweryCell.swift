@@ -11,5 +11,6 @@ import UIKit
 class BreweryCell: UITableViewCell {
     
     @IBOutlet weak var breweryView: BreweryView!
+    @IBOutlet weak var stateBreweryView: BreweryView!
     
 }

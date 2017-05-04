@@ -11,6 +11,7 @@ import UIKit
 class StatesTableViewController: UITableViewController {
     
     let cdStore = CoreDataStack.sharedInstance
+    let store = BeerDataStore.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,10 +53,14 @@ class StatesTableViewController: UITableViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier != "stateDetailSegue" {return}
-        if let destVC = segue.destination as? StateDetailTableViewController, let indexPath = tableView.indexPathForSelectedRow {
+        if let destVC = segue.destination as? StateDetailViewController, let indexPath = tableView.indexPathForSelectedRow {
             let selectedState = cdStore.states[indexPath.row]
             destVC.state = selectedState
             destVC.brews = selectedState.brews!.allObjects as! [Brew]
+            destVC.brews.sort(by: { (brew1, brew2) -> Bool in
+                brew1.isFavorite && !brew2.isFavorite
+            })
+            
         }
 
     }

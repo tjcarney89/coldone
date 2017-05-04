@@ -1,5 +1,5 @@
 //
-//  StateDetailTableViewController.swift
+//  StateBreweryTableViewController.swift
 //  Cold One
 //
 //  Created by TJ Carney on 5/2/17.
@@ -8,21 +8,20 @@
 
 import UIKit
 
-class StateDetailTableViewController: UITableViewController {
+class StateBreweryTableViewController: UITableViewController {
     
-    var state: USState?
-    var brews = [Brew]()
+    var breweries = [Brewery]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("BREWS: \(brews)")
-        print("COUNT: \(brews.count)")
+        print("6. Got those breweries: \(breweries)")
     }
+
 
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        return 100
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -32,21 +31,19 @@ class StateDetailTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return brews.count
-        
+        return breweries.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "stateDetailCell", for: indexPath) as! PouredBeerCell
-        let currentBrew = brews[indexPath.row]
-        print("CURRENT BREW: \(currentBrew)")
-        cell.beerStateView.brew = currentBrew
+        let cell = tableView.dequeueReusableCell(withIdentifier: "stateBreweryCell", for: indexPath) as! BreweryCell
+        let currentBrewery = breweries[indexPath.row]
+        cell.stateBreweryView.brewery = currentBrewery
         return cell
     }
     
 
-
+   
     /*
     // MARK: - Navigation
 
