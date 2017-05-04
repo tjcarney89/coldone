@@ -44,14 +44,11 @@ class StateBreweryTableViewController: UITableViewController {
     
 
    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier != "breweryBeerSegue" {return}
+        if let destVC = segue.destination as? BreweryBeerViewController, let indexPath = tableView.indexPathForSelectedRow {
+            let selectedBrewery = breweries[indexPath.row]
+            destVC.brewery = selectedBrewery
+        }
     }
-    */
-
 }

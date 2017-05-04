@@ -46,6 +46,7 @@
 		F09222611EB7D042006E9515 /* StateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09222601EB7D042006E9515 /* StateCell.swift */; };
 		F09222651EB90BB5006E9515 /* StateDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09222641EB90BB5006E9515 /* StateDetailViewController.swift */; };
 		F09222671EB912BA006E9515 /* StateBreweryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09222661EB912BA006E9515 /* StateBreweryTableViewController.swift */; };
+		F09222691EBBC2FE006E9515 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09222681EBBC2FE006E9515 /* ContainerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,6 +92,7 @@
 		F09222601EB7D042006E9515 /* StateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateCell.swift; sourceTree = "<group>"; };
 		F09222641EB90BB5006E9515 /* StateDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateDetailViewController.swift; sourceTree = "<group>"; };
 		F09222661EB912BA006E9515 /* StateBreweryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateBreweryTableViewController.swift; sourceTree = "<group>"; };
+		F09222681EBBC2FE006E9515 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		FBB0D7E29756CCCF6FDECF39 /* Pods-Cold One.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cold One.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cold One/Pods-Cold One.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -183,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				F034AFE51EAEA6A400DC5B15 /* HomeViewController.swift */,
+				F09222681EBBC2FE006E9515 /* ContainerViewController.swift */,
 				F034AFE71EAF866500DC5B15 /* BeerSearchViewController.swift */,
 				F034AFDB1EAE9D8100DC5B15 /* BrewerySearchViewController.swift */,
 				F034AFE91EAF969000DC5B15 /* BeerDetailViewController.swift */,
@@ -360,6 +363,7 @@
 				F034AFC21EAE4B5500DC5B15 /* Secret.swift in Sources */,
 				F092225B1EB7CAA3006E9515 /* StatesTableViewController.swift in Sources */,
 				F034AFE41EAEA1DD00DC5B15 /* BeerCell.swift in Sources */,
+				F09222691EBBC2FE006E9515 /* ContainerViewController.swift in Sources */,
 				F034AFC01EAE2F0E00DC5B15 /* Beer.swift in Sources */,
 				F034AFE81EAF866500DC5B15 /* BeerSearchViewController.swift in Sources */,
 				F034AFAA1EAE2C9200DC5B15 /* AppDelegate.swift in Sources */,

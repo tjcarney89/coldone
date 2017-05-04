@@ -14,6 +14,7 @@ class StateDetailViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var stateDetailTableView: UITableView!
     @IBOutlet weak var noBeersLabel: UILabel!
     @IBOutlet weak var findBeersButton: UIButton!
+    @IBOutlet weak var loadingLabel: UILabel!
     
     let store = BeerDataStore.shared
     var state: USState?
@@ -26,9 +27,12 @@ class StateDetailViewController: UIViewController, UITableViewDelegate, UITableV
         if brews.isEmpty {
             stateDetailTableView.isHidden = true
             self.setUpLabelAndButton()
+            self.findBeersButton.isHidden = true
             guard let name = state?.name else {return}
             store.getBreweriesByState(state: name , completion: { (breweries) in
                 DispatchQueue.main.async {
+                    self.loadingLabel.isHidden = true
+                    self.findBeersButton.isHidden = false
                     self.breweries = breweries
                 }
             })
@@ -57,8 +61,9 @@ class StateDetailViewController: UIViewController, UITableViewDelegate, UITableV
     
     func setUpLabelAndButton() {
         if let name = state?.name {
+            loadingLabel.text = "Hang on while we find you some!"
             noBeersLabel.text = "You have not tried any beers from \(name)!"
-            findBeersButton.setTitle("Find breweries in \(name)", for: .normal)
+            findBeersButton.setTitle("See breweries in \(name)", for: .normal)
             
         }
         
@@ -74,7 +79,8 @@ class StateDetailViewController: UIViewController, UITableViewDelegate, UITableV
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier != "stateBrewerySegue" {return}
         if let destVC = segue.destination as? StateBreweryTableViewController {
-            destVC.breweries = breweries
+            let filteredBreweries = breweries.filter { $0.type != "Production Facility" && $0.type != "Office" }
+            destVC.breweries = filteredBreweries
         }
     }
     

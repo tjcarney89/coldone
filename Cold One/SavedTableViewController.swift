@@ -16,6 +16,7 @@ class SavedTableViewController: UITableViewController, BeerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         cdStore.fetchData()
+        tabBarItem.title = "Saved Beers"
     }
 
     // MARK: - Table view data source
