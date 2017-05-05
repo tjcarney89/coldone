@@ -24,6 +24,7 @@ class BrewerySearchViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        brewerySearchBar.resignFirstResponder()
         if let search = brewerySearchBar.text {
             store.searchBreweries(name: search, completion: {
                 DispatchQueue.main.async {
@@ -66,6 +67,7 @@ class BrewerySearchViewController: UIViewController, UITableViewDelegate, UITabl
         if let destVC = segue.destination as? BeerDetailViewController, let indexPath = searchResultsTableView.indexPathForSelectedRow {
             let selectedBeer = store.currentBreweryBeers[indexPath.row]
             destVC.beer = selectedBeer
+            destVC.hidesBottomBarWhenPushed = true
         }
     }
 }

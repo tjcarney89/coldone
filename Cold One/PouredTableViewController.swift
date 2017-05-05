@@ -17,6 +17,12 @@ class PouredTableViewController: UITableViewController {
         super.viewDidLoad()
         cdStore.fetchData()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        cdStore.fetchData()
+        tableView.reloadData()
+    }
 
     // MARK: - Table view data source
 

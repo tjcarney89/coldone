@@ -63,6 +63,8 @@ final class BrewerydbAPIClient {
                         let newBeer = Beer(name: name, id: id, abv: abv, style: style, brewery: beerBrewery)
                         beers.append(newBeer)
                     }
+                } else {
+                    print(error)
                 }
                 completion(beers)
             })
@@ -119,7 +121,6 @@ final class BrewerydbAPIClient {
                     let nameArray = json["data"].arrayValue.map({$0["name"].stringValue})
                     if let id = idArray.first, let name = nameArray.first {
                         completion(id, name)
-                        print("1. Got the ID: \(id)")
                     }
                 }
             })
@@ -143,7 +144,6 @@ final class BrewerydbAPIClient {
                         let type = brewery["locationTypeDisplay"].stringValue
                         let state = State(name: stateName)
                         newBrewery = Brewery(name: name, id: id, locality: locality, state: state, type: type, address: address, distance: nil)
-                        print("2. Got the Brewery: \(newBrewery)")
                     }
                 }
                 completion(newBrewery)
@@ -153,7 +153,6 @@ final class BrewerydbAPIClient {
     }
     
     class func getBeersForBrewery(brewery: Brewery, completion: @escaping ([Beer]) -> ()) {
-        print("3. Getting beers for \(brewery)")
         var beers = [Beer]()
         let urlString = "http://api.brewerydb.com/v2/brewery/\(brewery.id)/beers?key=\(Secret.apiKey)"
         if let url = URL(string: urlString) {
@@ -171,7 +170,6 @@ final class BrewerydbAPIClient {
                         beers.append(beer)
                     }
                     completion(beers)
-                    print("4. Got beers for \(brewery): \(beers)")
                 }
             }
             dataTask.resume()

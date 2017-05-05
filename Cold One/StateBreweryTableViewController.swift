@@ -14,7 +14,6 @@ class StateBreweryTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("6. Got those breweries: \(breweries)")
     }
 
 
@@ -49,6 +48,7 @@ class StateBreweryTableViewController: UITableViewController {
         if let destVC = segue.destination as? BreweryBeerViewController, let indexPath = tableView.indexPathForSelectedRow {
             let selectedBrewery = breweries[indexPath.row]
             destVC.brewery = selectedBrewery
+            destVC.hidesBottomBarWhenPushed = true
         }
     }
 }

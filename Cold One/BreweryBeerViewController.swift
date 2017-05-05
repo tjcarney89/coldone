@@ -73,6 +73,7 @@ class BreweryBeerViewController: UIViewController, UITableViewDelegate, UITableV
         if let destVC = segue.destination as? BeerDetailViewController, let indexPath = beerTableView.indexPathForSelectedRow {
             let selectedBeer = store.currentBreweryBeers[indexPath.row]
             destVC.beer = selectedBeer
+            destVC.hidesBottomBarWhenPushed = true
         }
     }
     

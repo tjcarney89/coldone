@@ -22,7 +22,13 @@ class BeerSearchViewController: UIViewController, UITableViewDelegate, UITableVi
         searchResultsTableView.dataSource = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        beerSearchBar.resignFirstResponder()
         if let search = searchBar.text {
             store.searchBeers(name: search, completion: { (beers) in
                 DispatchQueue.main.async {
@@ -36,6 +42,7 @@ class BeerSearchViewController: UIViewController, UITableViewDelegate, UITableVi
 //            })
         }
     }
+    
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         store.currentBeer.removeAll()
@@ -64,6 +71,7 @@ class BeerSearchViewController: UIViewController, UITableViewDelegate, UITableVi
         if let destVC = segue.destination as? BeerDetailViewController, let indexPath = searchResultsTableView.indexPathForSelectedRow {
             let selectedBeer = store.currentBeer[indexPath.row]
             destVC.beer = selectedBeer
+            destVC.hidesBottomBarWhenPushed = true
         }
     }
 }

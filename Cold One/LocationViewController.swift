@@ -100,6 +100,7 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, UITab
         if let destVC = segue.destination as? BreweryBeerViewController, let indexPath = breweryTableView.indexPathForSelectedRow {
             let selectedBrewery = store.breweries[indexPath.row]
             destVC.brewery = selectedBrewery
+            destVC.hidesBottomBarWhenPushed = true
         }
     }
 }

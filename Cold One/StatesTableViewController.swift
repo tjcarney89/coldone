@@ -22,6 +22,12 @@ class StatesTableViewController: UITableViewController {
 
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        cdStore.fetchData()
+        tableView.reloadData()
+    }
+    
 
     // MARK: - Table view data source
     
@@ -60,6 +66,7 @@ class StatesTableViewController: UITableViewController {
             destVC.brews.sort(by: { (brew1, brew2) -> Bool in
                 brew1.isFavorite && !brew2.isFavorite
             })
+            destVC.hidesBottomBarWhenPushed = true
             
         }
 

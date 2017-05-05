@@ -23,6 +23,8 @@ class PouredBeerView: UIView {
             breweryLabel.text = brew.brewery
             if brew.isFavorite {
                 favoriteButton.setImage(#imageLiteral(resourceName: "filled star"), for: .normal)
+            } else if !brew.isFavorite {
+                favoriteButton.setImage(#imageLiteral(resourceName: "empty star"), for: .normal)
             }
         }
     }

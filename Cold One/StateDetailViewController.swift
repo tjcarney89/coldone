@@ -81,6 +81,7 @@ class StateDetailViewController: UIViewController, UITableViewDelegate, UITableV
         if let destVC = segue.destination as? StateBreweryTableViewController {
             let filteredBreweries = breweries.filter { $0.type != "Production Facility" && $0.type != "Office" }
             destVC.breweries = filteredBreweries
+            destVC.hidesBottomBarWhenPushed = true
         }
     }
     

@@ -146,7 +146,12 @@ final class CoreDataStack {
     
     func deleteBrew(brew: Brew) {
         let context = persistentContainer.viewContext
+        let state = brew.usstate
         context.delete(brew)
+        if state?.brews?.count == 1 {
+            state?.isFilled = false
+        }
+        
         saveContext()
     }
 }

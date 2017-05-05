@@ -90,12 +90,14 @@
                         <outlet property="abvLabel" destination="Bdq-us-zhR" id="QRh-mX-mgh"/>
                         <outlet property="beerNameLabel" destination="Qvs-cu-2a8" id="yiU-ru-6Vf"/>
                         <outlet property="breweryLabel" destination="SaT-rZ-hWz" id="1OV-Yp-s3g"/>
+                        <outlet property="pourButton" destination="d7e-wo-o5q" id="dJ8-fe-Ad1"/>
+                        <outlet property="saveButton" destination="OiV-UW-ubc" id="cJ6-iQ-nUf"/>
                         <outlet property="styleLabel" destination="xzm-1r-ndm" id="led-0c-euC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6194.3999999999996" y="67.916041979010501"/>
+            <point key="canvasLocation" x="134" y="-279"/>
         </scene>
         <!--Location View Controller-->
         <scene sceneID="FRY-8Q-YAD">
@@ -180,7 +182,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vll-ZY-AVv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1272.8" y="-453.82308845577217"/>
+            <point key="canvasLocation" x="-3386" y="-564"/>
         </scene>
         <!--Brewery Beer View Controller-->
         <scene sceneID="gca-5D-DrR">
@@ -239,7 +241,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IQp-LN-xXb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2988" y="-1239.1304347826087"/>
+            <point key="canvasLocation" x="-1078" y="-1637"/>
         </scene>
         <!--Container View Controller-->
         <scene sceneID="3Ox-Pz-tQf">
@@ -300,7 +302,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MUF-pi-xk2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2631.1999999999998" y="203.74812593703149"/>
+            <point key="canvasLocation" x="-3388" y="204"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="jbR-G2-HCG">
@@ -327,7 +329,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jT3-bD-SBu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-896.79999999999995" y="171.36431784107947"/>
+            <point key="canvasLocation" x="-6014" y="204"/>
         </scene>
         <!--Saved Table View Controller-->
         <scene sceneID="2bR-Pg-4z4">
@@ -371,7 +373,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7tB-k3-ya3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-839.20000000000005" y="1240.9295352323838"/>
+            <point key="canvasLocation" x="-6114" y="1241"/>
         </scene>
         <!--States Table View Controller-->
         <scene sceneID="krt-hZ-Ybl">
@@ -416,7 +418,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rom-WE-cMb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="212" y="-1239.1304347826087"/>
+            <point key="canvasLocation" x="-3854" y="-1637"/>
         </scene>
         <!--State Detail View Controller-->
         <scene sceneID="GQ5-Fk-K6U">
@@ -506,7 +508,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HDi-wH-wIC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1124" y="-1239.1304347826087"/>
+            <point key="canvasLocation" x="-2942" y="-1637"/>
         </scene>
         <!--State Brewery Table View Controller-->
         <scene sceneID="9uc-ID-jOE">
@@ -550,7 +552,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="luU-x4-GQM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1948" y="-1239.1304347826087"/>
+            <point key="canvasLocation" x="-2118" y="-1637"/>
         </scene>
         <!--Poured Table View Controller-->
         <scene sceneID="ESw-k6-MZl">
@@ -594,7 +596,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IOS-H9-5Uw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1079.2" y="1240.9295352323838"/>
+            <point key="canvasLocation" x="-4204" y="1241"/>
         </scene>
         <!--Brewery Search View Controller-->
         <scene sceneID="GuG-j3-mSz">
@@ -609,11 +611,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="f9i-YT-Tg4">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="8" width="375" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OQZ-zR-Tr6">
-                                <rect key="frame" x="0.0" y="95" width="375" height="572"/>
+                                <rect key="frame" x="0.0" y="75" width="375" height="592"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="breweryCell" rowHeight="80" id="JI0-bw-Sj2" customClass="BeerCell" customModule="Cold_One" customModuleProvider="target">
@@ -661,7 +663,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O8C-6S-5cS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2212" y="223.53823088455775"/>
+            <point key="canvasLocation" x="-1710" y="-111"/>
         </scene>
         <!--Beer Search View Controller-->
         <scene sceneID="YK4-bt-OUR">
@@ -728,7 +730,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5D3-wJ-aTT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2212" y="1213.9430284857572"/>
+            <point key="canvasLocation" x="-1711" y="568"/>
         </scene>
         <!--States-->
         <scene sceneID="Lf2-NP-akt">
@@ -747,13 +749,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VMR-0f-9Do" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-727.20000000000005" y="-1239.1304347826087"/>
+            <point key="canvasLocation" x="-4793" y="-1637"/>
         </scene>
-        <!--Saved Beers-->
+        <!--Saved-->
         <scene sceneID="JrX-mn-RGy">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dTU-GG-hJ2" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Saved Beers" image="save" selectedImage="save" id="oYc-K2-guZ"/>
+                    <tabBarItem key="tabBarItem" title="Saved" image="save" selectedImage="save" id="oYc-K2-guZ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fXo-Gt-j5R">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -766,13 +768,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1CU-ba-iTN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1778.4000000000001" y="1240.9295352323838"/>
+            <point key="canvasLocation" x="-7054" y="1241"/>
         </scene>
-        <!--Poured Beers-->
+        <!--Poured-->
         <scene sceneID="ibb-Z2-Zju">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mBi-wT-p7R" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Poured Beers" image="pour" id="ZY4-Hd-D2W"/>
+                    <tabBarItem key="tabBarItem" title="Poured" image="pour" id="ZY4-Hd-D2W"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="0T1-9G-Y0D">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -785,7 +787,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RgT-Zw-c0z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="140" y="1240.9295352323838"/>
+            <point key="canvasLocation" x="-5143" y="1241"/>
         </scene>
         <!--Search-->
         <scene sceneID="b3Y-Bd-gJs">
@@ -804,7 +806,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lyz-tE-G6J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3570.4000000000001" y="203.74812593703149"/>
+            <point key="canvasLocation" x="-4327" y="204"/>
         </scene>
         <!--Near Me-->
         <scene sceneID="sVz-M0-gtU">
@@ -823,7 +825,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IJD-2U-j3W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="333.60000000000002" y="-453.82308845577217"/>
+            <point key="canvasLocation" x="-4326" y="-564"/>
         </scene>
     </scenes>
     <resources>
@@ -835,6 +837,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="WSb-cK-j5p"/>
-        <segue reference="1Vb-s4-QW8"/>
+        <segue reference="7Cl-D8-SMF"/>
     </inferredMetricsTieBreakers>
 </document>
