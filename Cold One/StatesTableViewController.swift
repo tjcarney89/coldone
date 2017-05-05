@@ -12,6 +12,7 @@ class StatesTableViewController: UITableViewController {
     
     let cdStore = CoreDataStack.sharedInstance
     let store = BeerDataStore.shared
+    var counter = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,8 +25,19 @@ class StatesTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        updateCounter()
+        navigationItem.title = "States (\(counter)/50)"
         cdStore.fetchData()
         tableView.reloadData()
+    }
+    
+    func updateCounter() {
+        counter = 0
+        for state in cdStore.states {
+            if state.isFilled {
+                counter += 1
+            }
+        }
     }
     
 
@@ -74,3 +86,13 @@ class StatesTableViewController: UITableViewController {
     
 
 }
+
+extension StatesTableViewController {
+    func incrementCounter() {
+        counter += 1
+    }
+    func decrementCounter() {
+        counter -= 1
+    }
+}
+

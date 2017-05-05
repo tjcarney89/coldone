@@ -68,8 +68,6 @@ final class CoreDataStack {
     
     var states: [USState] = []
     
-
-    
     
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "Brew")
