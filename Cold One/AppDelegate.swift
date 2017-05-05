@@ -12,9 +12,15 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    let navigationBarAppearance = UINavigationBar.appearance()
+    let segmentedControlAppearance = UISegmentedControl.appearance()
+    let font1 = [NSFontAttributeName: UIFont(name: "BEER", size: 24)]
+    let font2 = [NSFontAttributeName: UIFont(name: "BEER", size: 15)]
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        navigationBarAppearance.titleTextAttributes = font1
+        segmentedControlAppearance.setTitleTextAttributes(font2, for: .normal)
         // Override point for customization after application launch.
         return true
     }

@@ -16,6 +16,7 @@ class SavedTableViewController: UITableViewController, BeerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         cdStore.fetchData()
+        navigationItem.title = "Saved Beers"
     }
     
     override func viewWillAppear(_ animated: Bool) {

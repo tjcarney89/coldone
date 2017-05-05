@@ -47,6 +47,8 @@
 		F09222651EB90BB5006E9515 /* StateDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09222641EB90BB5006E9515 /* StateDetailViewController.swift */; };
 		F09222671EB912BA006E9515 /* StateBreweryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09222661EB912BA006E9515 /* StateBreweryTableViewController.swift */; };
 		F09222691EBBC2FE006E9515 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09222681EBBC2FE006E9515 /* ContainerViewController.swift */; };
+		F09222761EBCEAA7006E9515 /* BEER.TTF in Resources */ = {isa = PBXBuildFile; fileRef = F09222751EBCEA8D006E9515 /* BEER.TTF */; };
+		F09222781EBCEB18006E9515 /* Root Beer.otf in Resources */ = {isa = PBXBuildFile; fileRef = F09222771EBCEB15006E9515 /* Root Beer.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +95,8 @@
 		F09222641EB90BB5006E9515 /* StateDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateDetailViewController.swift; sourceTree = "<group>"; };
 		F09222661EB912BA006E9515 /* StateBreweryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateBreweryTableViewController.swift; sourceTree = "<group>"; };
 		F09222681EBBC2FE006E9515 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		F09222751EBCEA8D006E9515 /* BEER.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = BEER.TTF; sourceTree = "<group>"; };
+		F09222771EBCEB15006E9515 /* Root Beer.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Root Beer.otf"; sourceTree = "<group>"; };
 		FBB0D7E29756CCCF6FDECF39 /* Pods-Cold One.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cold One.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cold One/Pods-Cold One.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -152,6 +156,7 @@
 				F034AFC31EAE68F800DC5B15 /* Models */,
 				F034AFC41EAE690C00DC5B15 /* Utility */,
 				F034AFC11EAE4B5500DC5B15 /* Secret.swift */,
+				F092226E1EBCE3AD006E9515 /* Fonts */,
 				F034AFAD1EAE2C9300DC5B15 /* Main.storyboard */,
 				F034AFEB1EAFDA4A00DC5B15 /* Brew.xcdatamodeld */,
 				F034AFB01EAE2C9300DC5B15 /* Assets.xcassets */,
@@ -222,6 +227,15 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		F092226E1EBCE3AD006E9515 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F09222751EBCEA8D006E9515 /* BEER.TTF */,
+				F09222771EBCEB15006E9515 /* Root Beer.otf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -285,11 +299,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F09222781EBCEB18006E9515 /* Root Beer.otf in Resources */,
 				F034AFB41EAE2C9300DC5B15 /* LaunchScreen.storyboard in Resources */,
 				F034AFDE1EAE9E8500DC5B15 /* BeerView.xib in Resources */,
 				F092225D1EB7CB54006E9515 /* StateView.xib in Resources */,
 				F034AFF31EB0F57000DC5B15 /* BreweryView.xib in Resources */,
 				F034AFD61EAE864900DC5B15 /* PouredBeerView.xib in Resources */,
+				F09222761EBCEAA7006E9515 /* BEER.TTF in Resources */,
 				F034AFB11EAE2C9300DC5B15 /* Assets.xcassets in Resources */,
 				F034AFCD1EAE7C0A00DC5B15 /* SavedBeerView.xib in Resources */,
 				F034AFAF1EAE2C9300DC5B15 /* Main.storyboard in Resources */,

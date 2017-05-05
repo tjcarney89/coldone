@@ -16,6 +16,8 @@ class PouredTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         cdStore.fetchData()
+        navigationItem.title = "Poured Beers"
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

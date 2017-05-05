@@ -20,9 +20,15 @@ class StatesTableViewController: UITableViewController {
         if cdStore.states.count == 0 {
             cdStore.makeStates()
         }
-
+        
+        for name in UIFont.familyNames {
+            print(name)
+            if let nameString = name as? String
+            {
+                print(UIFont.fontNames(forFamilyName: nameString))
+            }
+        }
     }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         updateCounter()
@@ -87,12 +93,5 @@ class StatesTableViewController: UITableViewController {
 
 }
 
-extension StatesTableViewController {
-    func incrementCounter() {
-        counter += 1
-    }
-    func decrementCounter() {
-        counter -= 1
-    }
-}
+
 

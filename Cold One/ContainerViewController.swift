@@ -17,13 +17,12 @@ class ContainerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "Search by Beer"
         searchSegmentedControl.selectedSegmentIndex = 0
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func segmentedValueChanged(_ sender: Any) {
@@ -31,10 +30,13 @@ class ContainerViewController: UIViewController {
         case 0:
             beerSearchView.isHidden = false
             brewerySearchView.isHidden = true
+            navigationItem.title = "Search by Beer"
             break
         case 1:
             beerSearchView.isHidden = true
             brewerySearchView.isHidden = false
+            navigationItem.title = "Search by Brewery"
+
             break
         default:
             break

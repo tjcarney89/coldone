@@ -25,6 +25,7 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, UITab
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "Breweries Near Me"
         breweryTableView.delegate = self
         breweryTableView.dataSource = self
         radiusPickerView.delegate = self
@@ -52,13 +53,24 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, UITab
         return 1
     }
     
+    
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        let titleLabel = UILabel()
+        let titleData = String(radiusArray[row])
+        let title = NSAttributedString(string: titleData, attributes: [NSFontAttributeName: UIFont(name: "Beer", size: 17)!])
+        titleLabel.attributedText = title
+        titleLabel.textAlignment = .center
+        return titleLabel
+        
+    }
+    
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return 6
     }
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return String(radiusArray[row])
-    }
+//    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+//        return String(radiusArray[row])
+//    }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selectedRadius = radiusArray[row] as Int
