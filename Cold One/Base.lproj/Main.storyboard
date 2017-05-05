@@ -158,13 +158,15 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mile(s)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kbg-ps-UsM">
                                 <rect key="frame" x="221" y="94" width="60" height="17"/>
                                 <fontDescription key="fontDescription" name="Beer" family="Beer" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.80392156859999997" green="0.3921568627" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xyn-4g-i60">
-                                <rect key="frame" x="16" y="86" width="71" height="32"/>
+                                <rect key="frame" x="16" y="86" width="94" height="32"/>
                                 <fontDescription key="fontDescription" name="Beer" family="Beer" pointSize="20"/>
-                                <state key="normal" title="SEARCH"/>
+                                <state key="normal" title="SEARCH">
+                                    <color key="titleColor" red="0.3411764706" green="0.18039215689999999" blue="0.043137254899999998" alpha="0.75997966610000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="searchButtonPressed:" destination="DAb-VZ-9i2" eventType="touchUpInside" id="AIR-Er-rZE"/>
                                 </connections>
@@ -178,6 +180,7 @@
                             <constraint firstItem="6K8-VP-aAg" firstAttribute="top" secondItem="Fze-er-g7d" secondAttribute="bottom" constant="91" id="Ev5-kn-F9M"/>
                             <constraint firstAttribute="trailingMargin" secondItem="TaD-1b-L9Y" secondAttribute="trailing" constant="140" id="EyM-t8-lOd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Kbg-ps-UsM" secondAttribute="trailing" constant="78" id="G5f-IF-Ae1"/>
+                            <constraint firstItem="xyn-4g-i60" firstAttribute="width" secondItem="kiE-lC-ymY" secondAttribute="width" multiplier="0.25" id="Led-hY-ERU"/>
                             <constraint firstAttribute="trailing" secondItem="6K8-VP-aAg" secondAttribute="trailing" id="O33-0h-eq1"/>
                             <constraint firstItem="Kbg-ps-UsM" firstAttribute="top" secondItem="Fze-er-g7d" secondAttribute="bottom" constant="30" id="dZO-03-VSR"/>
                             <constraint firstItem="xyn-4g-i60" firstAttribute="top" secondItem="Fze-er-g7d" secondAttribute="bottom" constant="22" id="l5h-hi-MaE"/>
@@ -190,6 +193,7 @@
                     <connections>
                         <outlet property="breweryTableView" destination="6K8-VP-aAg" id="S1T-NC-pkE"/>
                         <outlet property="radiusPickerView" destination="TaD-1b-L9Y" id="9n6-sa-oNI"/>
+                        <outlet property="searchbutton" destination="xyn-4g-i60" id="mnq-gD-Dg9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vll-ZY-AVv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -285,6 +289,7 @@
                                     <segment title="Beer"/>
                                     <segment title="Brewery"/>
                                 </segments>
+                                <color key="tintColor" red="0.80392156862745101" green="0.39215686274509803" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="segmentedValueChanged:" destination="4EU-ML-iWT" eventType="valueChanged" id="fem-23-6if"/>
                                 </connections>

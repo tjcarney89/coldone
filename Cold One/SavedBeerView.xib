@@ -33,13 +33,13 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goose IPA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="CyB-h3-MWb">
                     <rect key="frame" x="16" y="11" width="300" height="32.5"/>
                     <fontDescription key="fontDescription" name="RootBeer" family="Root Beer" pointSize="31"/>
-                    <nil key="textColor"/>
+                    <color key="textColor" red="0.9999127984046936" green="1" blue="0.99988144636154175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goose Island Beer Company" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k0F-WH-HAO">
                     <rect key="frame" x="16" y="51.5" width="223.5" height="25.5"/>
                     <fontDescription key="fontDescription" name="RootBeer" family="Root Beer" pointSize="24"/>
-                    <nil key="textColor"/>
+                    <color key="textColor" red="0.9999127984046936" green="1" blue="0.99988144636154175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RnD-cy-Wzf">
@@ -48,13 +48,15 @@
                         <constraint firstAttribute="width" constant="50" id="NIr-cU-RkX"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Beer" family="Beer" pointSize="17"/>
-                    <state key="normal" title="Pour"/>
+                    <state key="normal" title="Pour">
+                        <color key="titleColor" red="0.80392156859999997" green="0.3921568627" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
                     <connections>
                         <action selector="pourButtonTapped:" destination="-1" eventType="touchUpInside" id="KWc-L5-hJk"/>
                     </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.3411764706" green="0.18039215689999999" blue="0.043137254899999998" alpha="0.75997966610000001" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="RnD-cy-Wzf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="6" id="F05-Ry-HTC"/>
                 <constraint firstItem="CyB-h3-MWb" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="11" id="OVw-Q9-x5V"/>

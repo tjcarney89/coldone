@@ -13,6 +13,8 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, UITab
     
     @IBOutlet weak var breweryTableView: UITableView!
     @IBOutlet weak var radiusPickerView: UIPickerView!
+    @IBOutlet weak var searchbutton: UIButton!
+    
     
     let store = BeerDataStore.shared
     
@@ -31,6 +33,7 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, UITab
         radiusPickerView.delegate = self
         radiusPickerView.dataSource = self
         determineLocation()
+        setUpSearchButton()
     }
     
     
@@ -57,10 +60,12 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, UITab
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         let titleLabel = UILabel()
         let titleData = String(radiusArray[row])
-        let title = NSAttributedString(string: titleData, attributes: [NSFontAttributeName: UIFont(name: "Beer", size: 17)!])
+        let title = NSAttributedString(string: titleData, attributes: [NSForegroundColorAttributeName: UIColor(red: 205/255, green: 100/255, blue: 40/255, alpha: 1.0), NSFontAttributeName: UIFont(name: "Beer", size: 17)!])
         titleLabel.attributedText = title
         titleLabel.textAlignment = .center
         return titleLabel
+        
+        
         
     }
     
@@ -92,6 +97,12 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, UITab
         latitude = userLocation.coordinate.latitude
         longitude = userLocation.coordinate.longitude
         locationManager.stopUpdatingLocation()
+    }
+    
+    func setUpSearchButton() {
+        searchbutton.layer.borderColor = UIColor(red: 225/255, green: 214/255, blue: 15/255, alpha: 1.0).cgColor
+        searchbutton.layer.cornerRadius = 10
+        searchbutton.layer.borderWidth = 2
     }
     
     @IBAction func searchButtonPressed(_ sender: Any) {

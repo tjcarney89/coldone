@@ -31,13 +31,13 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goose IPA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ANk-ph-o3q">
                     <rect key="frame" x="16" y="10" width="98.5" height="32.5"/>
                     <fontDescription key="fontDescription" name="RootBeer" family="Root Beer" pointSize="31"/>
-                    <nil key="textColor"/>
+                    <color key="textColor" red="0.9999127984046936" green="1" blue="0.99988144636154175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goose Island Brewing Company" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5DQ-Rs-Da7">
                     <rect key="frame" x="16" y="50.5" width="255" height="25.5"/>
                     <fontDescription key="fontDescription" name="RootBeer" family="Root Beer" pointSize="24"/>
-                    <nil key="textColor"/>
+                    <color key="textColor" red="0.9999127984046936" green="1" blue="0.99988144636154175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9LZ-Qa-deM">
@@ -52,7 +52,7 @@
                     </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.3411764706" green="0.18039215689999999" blue="0.043137254899999998" alpha="0.75997966610000001" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="ANk-ph-o3q" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="1D1-qm-OJB"/>
                 <constraint firstItem="ANk-ph-o3q" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="BtI-co-hDf"/>

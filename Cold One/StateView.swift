@@ -23,6 +23,7 @@ class StateView: UIView {
             } else {
                 filledImageView.image = #imageLiteral(resourceName: "empty beer")
             }
+            //backgroundColor = UIColor(red: 205/255, green: 100/255, blue: 40/255, alpha: 1.0)
         }
     }
     
