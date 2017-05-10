@@ -122,15 +122,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dUV-iW-PSM">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xyn-4g-i60">
+                                        <rect key="frame" x="245.5" y="498" width="93.5" height="32"/>
+                                        <fontDescription key="fontDescription" name="Beer" family="Beer" pointSize="20"/>
+                                        <state key="normal" title="SEARCH">
+                                            <color key="titleColor" red="0.81960784310000001" green="0.66666666669999997" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="searchButtonPressed:" destination="DAb-VZ-9i2" eventType="touchUpInside" id="AIR-Er-rZE"/>
+                                        </connections>
+                                    </button>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TaD-1b-L9Y">
+                                        <rect key="frame" x="26" y="462" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="IrS-EY-XDl"/>
+                                            <constraint firstAttribute="height" constant="100" id="s6J-Pc-AED"/>
+                                        </constraints>
+                                    </pickerView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mile(s)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kbg-ps-UsM">
+                                        <rect key="frame" x="134" y="505" width="60" height="17"/>
+                                        <fontDescription key="fontDescription" name="Beer" family="Beer" pointSize="17"/>
+                                        <color key="textColor" red="0.81960784310000001" green="0.66666666669999997" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.45098039220000002" green="0.23137254900000001" blue="0.098039215690000001" alpha="0.75997966610000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="xyn-4g-i60" firstAttribute="width" secondItem="dUV-iW-PSM" secondAttribute="width" multiplier="0.25" id="PCn-Zz-FOl"/>
+                                </constraints>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6K8-VP-aAg">
-                                <rect key="frame" x="0.0" y="155" width="375" height="463"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="474"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="breweryListCell" rowHeight="100" id="Vlh-vr-bte" customClass="BreweryCell" customModule="Cold_One" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vlh-vr-bte" id="8sY-FS-lMw">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zze-e8-cST" customClass="BreweryView" customModule="Cold_One" customModuleProvider="target">
@@ -152,41 +184,23 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TaD-1b-L9Y">
-                                <rect key="frame" x="146" y="44" width="73" height="115"/>
-                            </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mile(s)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kbg-ps-UsM">
-                                <rect key="frame" x="221" y="94" width="60" height="17"/>
-                                <fontDescription key="fontDescription" name="Beer" family="Beer" pointSize="17"/>
-                                <color key="textColor" red="0.45098039220000002" green="0.23137254900000001" blue="0.098039215690000001" alpha="0.75997966610000001" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xyn-4g-i60">
-                                <rect key="frame" x="16" y="86" width="94" height="32"/>
-                                <fontDescription key="fontDescription" name="Beer" family="Beer" pointSize="20"/>
-                                <state key="normal" title="SEARCH">
-                                    <color key="titleColor" red="0.45098039220000002" green="0.23137254900000001" blue="0.098039215690000001" alpha="0.75997966610000001" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="searchButtonPressed:" destination="DAb-VZ-9i2" eventType="touchUpInside" id="AIR-Er-rZE"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="A9S-vo-FGB" firstAttribute="top" secondItem="xyn-4g-i60" secondAttribute="bottom" constant="24" id="1oX-Tg-7Qe"/>
                             <constraint firstItem="6K8-VP-aAg" firstAttribute="leading" secondItem="kiE-lC-ymY" secondAttribute="leading" id="3NA-Tt-YS2"/>
-                            <constraint firstItem="6K8-VP-aAg" firstAttribute="top" secondItem="TaD-1b-L9Y" secondAttribute="bottom" constant="-4" id="8be-uI-757"/>
-                            <constraint firstItem="A9S-vo-FGB" firstAttribute="top" secondItem="6K8-VP-aAg" secondAttribute="bottom" id="9Mg-YM-687"/>
-                            <constraint firstItem="6K8-VP-aAg" firstAttribute="top" secondItem="Fze-er-g7d" secondAttribute="bottom" constant="91" id="Ev5-kn-F9M"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="TaD-1b-L9Y" secondAttribute="trailing" constant="140" id="EyM-t8-lOd"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Kbg-ps-UsM" secondAttribute="trailing" constant="78" id="G5f-IF-Ae1"/>
-                            <constraint firstItem="xyn-4g-i60" firstAttribute="width" secondItem="kiE-lC-ymY" secondAttribute="width" multiplier="0.25" id="Led-hY-ERU"/>
+                            <constraint firstItem="A9S-vo-FGB" firstAttribute="top" secondItem="TaD-1b-L9Y" secondAttribute="bottom" constant="-8" id="8Zj-zd-8qR"/>
+                            <constraint firstItem="A9S-vo-FGB" firstAttribute="top" secondItem="6K8-VP-aAg" secondAttribute="bottom" constant="80" id="9Mg-YM-687"/>
+                            <constraint firstItem="A9S-vo-FGB" firstAttribute="top" secondItem="Kbg-ps-UsM" secondAttribute="bottom" constant="32" id="Db4-eH-L5L"/>
                             <constraint firstAttribute="trailing" secondItem="6K8-VP-aAg" secondAttribute="trailing" id="O33-0h-eq1"/>
-                            <constraint firstItem="Kbg-ps-UsM" firstAttribute="top" secondItem="Fze-er-g7d" secondAttribute="bottom" constant="30" id="dZO-03-VSR"/>
-                            <constraint firstItem="xyn-4g-i60" firstAttribute="top" secondItem="Fze-er-g7d" secondAttribute="bottom" constant="22" id="l5h-hi-MaE"/>
-                            <constraint firstItem="TaD-1b-L9Y" firstAttribute="top" secondItem="Fze-er-g7d" secondAttribute="bottom" constant="-20" id="o7o-Ws-YE9"/>
-                            <constraint firstItem="TaD-1b-L9Y" firstAttribute="leading" secondItem="kiE-lC-ymY" secondAttribute="leadingMargin" constant="130" id="oIJ-qk-fYA"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="xyn-4g-i60" secondAttribute="leading" id="rh4-JN-xRk"/>
+                            <constraint firstItem="dUV-iW-PSM" firstAttribute="leading" secondItem="kiE-lC-ymY" secondAttribute="leading" id="Oxl-yv-uNL"/>
+                            <constraint firstItem="TaD-1b-L9Y" firstAttribute="leading" secondItem="kiE-lC-ymY" secondAttribute="leadingMargin" constant="10" id="eip-K6-BX9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xyn-4g-i60" secondAttribute="trailing" constant="20" id="f1i-NI-gTH"/>
+                            <constraint firstItem="dUV-iW-PSM" firstAttribute="top" secondItem="Fze-er-g7d" secondAttribute="bottom" id="fTs-cz-g3b"/>
+                            <constraint firstItem="Kbg-ps-UsM" firstAttribute="leading" secondItem="kiE-lC-ymY" secondAttribute="leadingMargin" constant="118" id="uNn-Z2-zW6"/>
+                            <constraint firstItem="A9S-vo-FGB" firstAttribute="top" secondItem="dUV-iW-PSM" secondAttribute="bottom" id="xdN-Tr-5BV"/>
+                            <constraint firstItem="6K8-VP-aAg" firstAttribute="top" secondItem="kiE-lC-ymY" secondAttribute="topMargin" constant="64" id="xlo-Y2-eG8"/>
+                            <constraint firstAttribute="trailing" secondItem="dUV-iW-PSM" secondAttribute="trailing" id="zhG-zb-QA1"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Shn-uN-HAS"/>
@@ -220,7 +234,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7J7-91-dD7" id="jnA-7r-iRP">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J6T-GG-vbb" customClass="BeerView" customModule="Cold_One" customModuleProvider="target">
@@ -371,7 +385,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vxU-Bo-haD" id="HZw-oe-C5o">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uu7-0f-9u8" customClass="SavedBeerView" customModule="Cold_One" customModuleProvider="target">
@@ -415,7 +429,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yaU-L1-8K6" id="OVT-MS-JsZ">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3iY-Sx-kmL" customClass="StateView" customModule="Cold_One" customModuleProvider="target">
@@ -487,7 +501,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Cl7-J4-W2p" id="Uy7-uF-NER">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8KB-j5-oqw" customClass="PouredBeerView" customModule="Cold_One" customModuleProvider="target">
@@ -551,7 +565,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="P0P-xu-cR9" id="P9P-NM-6SC">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lwb-ey-WeF" customClass="BreweryView" customModule="Cold_One" customModuleProvider="target">
@@ -595,7 +609,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pcG-eI-aPZ" id="uOk-xB-mnG">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AgU-Xt-OLQ" customClass="PouredBeerView" customModule="Cold_One" customModuleProvider="target">
@@ -650,7 +664,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JI0-bw-Sj2" id="b3S-md-ZEy">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="byJ-Os-Z6q" customClass="BeerView" customModule="Cold_One" customModuleProvider="target">
@@ -717,7 +731,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="m5S-Dp-ue7" id="Dda-JL-JZg">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i6g-zs-37J" customClass="BeerView" customModule="Cold_One" customModuleProvider="target">

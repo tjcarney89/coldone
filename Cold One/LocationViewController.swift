@@ -23,10 +23,11 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, UITab
     var longitude = Double()
     
     var radiusArray = [1, 5, 10, 20, 50, 100]
-    var selectedRadius = Int()
+    var selectedRadius = 1
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        breweryTableView.isHidden = true
         navigationItem.title = "Breweries Near Me"
         breweryTableView.delegate = self
         breweryTableView.dataSource = self
@@ -109,6 +110,7 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, UITab
     @IBAction func searchButtonPressed(_ sender: Any) {
         store.getBreweries(latitude: latitude, longitude: longitude, radius: selectedRadius, completion: {
             DispatchQueue.main.async {
+                self.breweryTableView.isHidden = false
                 self.breweryTableView.reloadData()
             }
         })
