@@ -45,6 +45,7 @@ final class BrewerydbAPIClient {
                         let name = beer["name"].stringValue
                         let abv = beer["abv"].stringValue
                         let style = beer["style"]["name"].stringValue
+                        let imageURL = beer["labels"]["medium"].string
                         let breweryArray = beer["breweries"].arrayValue
                         var unwrappedBeerBrewery: Brewery?
                         for brewery in breweryArray {
@@ -60,7 +61,7 @@ final class BrewerydbAPIClient {
                             unwrappedBeerBrewery = newBrewery
                         }
                         guard let beerBrewery = unwrappedBeerBrewery else {return}
-                        let newBeer = Beer(name: name, id: id, abv: abv, style: style, brewery: beerBrewery)
+                        let newBeer = Beer(name: name, id: id, abv: abv, style: style, imageURL: imageURL, brewery: beerBrewery)
                         beers.append(newBeer)
                     }
                 } else {
@@ -166,7 +167,8 @@ final class BrewerydbAPIClient {
                         let id = beer["id"].stringValue
                         let style = beer["style"]["name"].stringValue
                         let abv = beer["abv"].stringValue
-                        let beer = Beer(name: name, id: id, abv: abv, style: style, brewery: brewery)
+                        let imageURL = beer["labels"]["medium"].string
+                        let beer = Beer(name: name, id: id, abv: abv, style: style, imageURL: imageURL, brewery: brewery)
                         beers.append(beer)
                     }
                     completion(beers)

@@ -15,6 +15,7 @@ class Beer {
     var name = String()
     var abv = String()
     var style = String()
+    var imageURL: String?
     var brewery: Brewery?
     
 //    init(dict: JSON) {
@@ -30,11 +31,12 @@ class Beer {
 //    }
 //    
     
-    init(name: String, id: String, abv: String, style: String, brewery: Brewery) {
+    init(name: String, id: String, abv: String, style: String, imageURL: String?, brewery: Brewery) {
         self.name = name
         self.id = id
         self.abv = abv
         self.style = style
+        self.imageURL = imageURL
         self.brewery = brewery
     }
 }

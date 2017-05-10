@@ -7,4 +7,5 @@ target 'Cold One' do
 
   # Pods for Cold One
     pod 'SwiftyJSON'
+    pod 'Kingfisher', '~> 3.0'
 end

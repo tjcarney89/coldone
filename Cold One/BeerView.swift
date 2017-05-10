@@ -7,15 +7,23 @@
 //
 
 import UIKit
+import Kingfisher
 
 class BeerView: UIView {
 
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var beerNameLabel: UILabel!
     @IBOutlet weak var beerStyleLabel: UILabel!
+    @IBOutlet weak var beerImageView: UIImageView!
     
     var beer: Beer! {
         didSet {
+            if let urlString = beer.imageURL {
+                let url = URL(string: urlString)
+                beerImageView.kf.setImage(with: url)
+            } else {
+                beerImageView.image = UIImage(named: "default")
+            }
             beerNameLabel.text = beer.name
             beerStyleLabel.text = beer.style
         }
