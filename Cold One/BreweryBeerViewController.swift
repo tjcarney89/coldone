@@ -16,6 +16,7 @@ class BreweryBeerViewController: UIViewController, UITableViewDelegate, UITableV
     let loadingLabel = UILabel()
     
     let store = BeerDataStore.shared
+    let beerColor = UIColor(red: 209/255, green: 170/255, blue: 35/255, alpha: 1.0)
     
     var brewery: Brewery?
 
@@ -84,9 +85,9 @@ class BreweryBeerViewController: UIViewController, UITableViewDelegate, UITableV
     func setUpLoadingView() {
         view.addSubview(loadingView)
         loadingView.layer.cornerRadius = 10
-        loadingView.layer.borderColor = UIColor.black.cgColor
+        loadingView.layer.borderColor = UIColor.white.cgColor
         loadingView.layer.borderWidth = 2
-        loadingView.backgroundColor = UIColor.white
+        loadingView.backgroundColor = beerColor
         loadingView.translatesAutoresizingMaskIntoConstraints = false
         loadingView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         loadingView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -100).isActive = true
@@ -98,7 +99,8 @@ class BreweryBeerViewController: UIViewController, UITableViewDelegate, UITableV
         loadingView.addSubview(loadingLabel)
         loadingLabel.text = "Loading Beers..."
         loadingLabel.textAlignment = .center
-        loadingLabel.font = UIFont(name: "Avenir-Heavy", size: 20)
+        loadingLabel.textColor = UIColor.white
+        loadingLabel.font = UIFont(name: "Beer", size: 20)
         loadingLabel.translatesAutoresizingMaskIntoConstraints = false
         loadingLabel.centerXAnchor.constraint(equalTo: loadingView.centerXAnchor).isActive = true
         loadingLabel.centerYAnchor.constraint(equalTo: loadingView.centerYAnchor).isActive = true
