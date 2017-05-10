@@ -23,10 +23,8 @@ class StatesTableViewController: UITableViewController {
         
         for name in UIFont.familyNames {
             print(name)
-            if let nameString = name as? String
-            {
-                print(UIFont.fontNames(forFamilyName: nameString))
-            }
+            print(UIFont.fontNames(forFamilyName: name))
+            
         }
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -68,6 +66,7 @@ class StatesTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "stateCell", for: indexPath) as! StateCell
         let currentState = cdStore.states[indexPath.row]
         cell.stateView.state = currentState
+        cell.selectionStyle = .none
         return cell
     }
     
@@ -85,7 +84,9 @@ class StatesTableViewController: UITableViewController {
                 brew1.isFavorite && !brew2.isFavorite
             })
             destVC.hidesBottomBarWhenPushed = true
-            
+            let backItem = UIBarButtonItem()
+            backItem.title = ""
+            navigationItem.backBarButtonItem = backItem
         }
 
     }

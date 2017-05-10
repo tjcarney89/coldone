@@ -41,6 +41,7 @@ class PouredTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "pouredCell", for: indexPath) as! PouredBeerCell
         let currentBrew = cdStore.pouredBrews[indexPath.row]
         cell.pouredBeerView.brew = currentBrew
+        cell.selectionStyle = .none
         return cell
     }
     

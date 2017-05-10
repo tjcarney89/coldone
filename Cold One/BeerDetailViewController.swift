@@ -34,6 +34,8 @@ class BeerDetailViewController: UIViewController {
             abvLabel.text = "ABV: \(beer.abv)"
         }
     }
+    
+
 
     @IBAction func saveButtonTapped(_ sender: Any) {
         saveButton.isHidden = true
@@ -44,7 +46,6 @@ class BeerDetailViewController: UIViewController {
             alert.addAction(okAction)
             self.present(alert, animated: true)
 
-            //let context = cdStore.persistentContainer.viewContext
             let newBrew = cdStore.makeBrew(beer: beer)
             newBrew.isSaved = true
             cdStore.savedBrews.append(newBrew)
@@ -61,7 +62,6 @@ class BeerDetailViewController: UIViewController {
             let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
             alert.addAction(okAction)
             self.present(alert, animated: true)
-            //let context = cdStore.persistentContainer.viewContext
             let newBrew = cdStore.makeBrew(beer: beer)
             for state in cdStore.states {
                 if brewery.state.name == state.name {

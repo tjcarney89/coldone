@@ -41,6 +41,7 @@ class SavedTableViewController: UITableViewController, BeerDelegate {
         let currentBrew = cdStore.savedBrews[indexPath.row]
         cell.savedBeerView.brew = currentBrew
         cell.savedBeerView.delegate = self
+        cell.selectionStyle = .none
         return cell
     }
     

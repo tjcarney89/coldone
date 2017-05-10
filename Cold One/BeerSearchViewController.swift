@@ -35,11 +35,6 @@ class BeerSearchViewController: UIViewController, UITableViewDelegate, UITableVi
                     self.searchResultsTableView.reloadData()
                 }
             })
-//            store.getBeer(name: search, completion: { (beer) in
-//                DispatchQueue.main.async {
-//                    self.searchResultsTableView.reloadData()
-//                }
-//            })
         }
     }
     
@@ -61,6 +56,7 @@ class BeerSearchViewController: UIViewController, UITableViewDelegate, UITableVi
         let cell = searchResultsTableView.dequeueReusableCell(withIdentifier: "singleBeerCell", for: indexPath) as! BeerCell
         let currentBeer = store.currentBeer[indexPath.row]
         cell.beerView.beer = currentBeer
+        cell.selectionStyle = .none
         return cell
     }
     
@@ -72,6 +68,9 @@ class BeerSearchViewController: UIViewController, UITableViewDelegate, UITableVi
             let selectedBeer = store.currentBeer[indexPath.row]
             destVC.beer = selectedBeer
             destVC.hidesBottomBarWhenPushed = true
+            let backItem = UIBarButtonItem()
+            backItem.title = ""
+            navigationItem.backBarButtonItem = backItem
         }
     }
 }

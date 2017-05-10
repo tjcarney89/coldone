@@ -24,12 +24,10 @@ class StateBreweryTableViewController: UITableViewController {
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return breweries.count
     }
 
@@ -38,6 +36,7 @@ class StateBreweryTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "stateBreweryCell", for: indexPath) as! BreweryCell
         let currentBrewery = breweries[indexPath.row]
         cell.stateBreweryView.brewery = currentBrewery
+        cell.selectionStyle = .none
         return cell
     }
     
@@ -49,6 +48,9 @@ class StateBreweryTableViewController: UITableViewController {
             let selectedBrewery = breweries[indexPath.row]
             destVC.brewery = selectedBrewery
             destVC.hidesBottomBarWhenPushed = true
+            let backItem = UIBarButtonItem()
+            backItem.title = ""
+            navigationItem.backBarButtonItem = backItem
         }
     }
 }

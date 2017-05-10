@@ -14,17 +14,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     let navigationBarAppearance = UINavigationBar.appearance()
     let segmentedControlAppearance = UISegmentedControl.appearance()
+    let barButtonAppearance = UIBarButtonItem.appearance()
     let attributes1 = [NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont(name: "BEER", size: 24)]
     let font2 = [NSFontAttributeName: UIFont(name: "BEER", size: 15)]
+    
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         navigationBarAppearance.titleTextAttributes = attributes1
-        navigationBarAppearance.barTintColor = UIColor(red: 225/255, green: 214/255, blue: 15/255, alpha: 1.0)
-        //(red: 225, green: 214, blue: 15, alpha: 1.0)
+        navigationBarAppearance.barTintColor = UIColor(red: 209/255, green: 170/255, blue: 35/255, alpha: 1.0)
         segmentedControlAppearance.setTitleTextAttributes(font2, for: .normal)
-        //segmentedControlAppearance.backgroundColor = UIColor(red: 87/255, green: 46/255, blue: 11/255, alpha: 1.0)
-        // Override point for customization after application launch.
+        let backButton = UIImage(named: "back")
+        let backButtonImage = backButton?.stretchableImage(withLeftCapWidth: 0, topCapHeight: 10)
+        barButtonAppearance.setBackButtonBackgroundImage(backButtonImage, for: .normal, barMetrics: .default)
         return true
     }
 

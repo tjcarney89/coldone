@@ -32,11 +32,6 @@ class BrewerySearchViewController: UIViewController, UITableViewDelegate, UITabl
 
                 }
             })
-//            store.getBreweryBeers(name: search, completion: {
-//                DispatchQueue.main.async {
-//                    self.searchResultsTableView.reloadData()
-//                }
-//            })
         }
     }
     
@@ -57,6 +52,7 @@ class BrewerySearchViewController: UIViewController, UITableViewDelegate, UITabl
         let cell = searchResultsTableView.dequeueReusableCell(withIdentifier: "breweryCell", for: indexPath) as! BeerCell
         let currentBeer = store.currentBreweryBeers[indexPath.row]
         cell.beerView.beer = currentBeer
+        cell.selectionStyle = .none
         return cell
     }
 
@@ -68,6 +64,9 @@ class BrewerySearchViewController: UIViewController, UITableViewDelegate, UITabl
             let selectedBeer = store.currentBreweryBeers[indexPath.row]
             destVC.beer = selectedBeer
             destVC.hidesBottomBarWhenPushed = true
+            let backItem = UIBarButtonItem()
+            backItem.title = ""
+            navigationItem.backBarButtonItem = backItem
         }
     }
 }

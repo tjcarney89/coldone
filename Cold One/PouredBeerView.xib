@@ -52,7 +52,7 @@
                     </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" red="0.3411764706" green="0.18039215689999999" blue="0.043137254899999998" alpha="0.75997966610000001" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.45098039220000002" green="0.23137254900000001" blue="0.098039215690000001" alpha="0.75997966610000001" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="ANk-ph-o3q" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="1D1-qm-OJB"/>
                 <constraint firstItem="ANk-ph-o3q" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="BtI-co-hDf"/>
@@ -67,6 +67,6 @@
         </view>
     </objects>
     <resources>
-        <image name="empty star" width="120" height="120"/>
+        <image name="empty star" width="99" height="98"/>
     </resources>
 </document>

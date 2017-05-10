@@ -49,6 +49,7 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, UITab
         let cell = breweryTableView.dequeueReusableCell(withIdentifier: "breweryListCell", for: indexPath) as! BreweryCell
         let currentBrewery = store.breweries[indexPath.row]
         cell.breweryView.brewery = currentBrewery
+        cell.selectionStyle = .none
         return cell
     }
     
@@ -60,7 +61,7 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, UITab
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         let titleLabel = UILabel()
         let titleData = String(radiusArray[row])
-        let title = NSAttributedString(string: titleData, attributes: [NSForegroundColorAttributeName: UIColor(red: 205/255, green: 100/255, blue: 40/255, alpha: 1.0), NSFontAttributeName: UIFont(name: "Beer", size: 17)!])
+        let title = NSAttributedString(string: titleData, attributes: [NSForegroundColorAttributeName: UIColor(red: 209/255, green: 170/255, blue: 35/255, alpha: 1.0), NSFontAttributeName: UIFont(name: "Beer", size: 17)!])
         titleLabel.attributedText = title
         titleLabel.textAlignment = .center
         return titleLabel
@@ -100,7 +101,7 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, UITab
     }
     
     func setUpSearchButton() {
-        searchbutton.layer.borderColor = UIColor(red: 225/255, green: 214/255, blue: 15/255, alpha: 1.0).cgColor
+        searchbutton.layer.borderColor = UIColor(red: 209/255, green: 170/255, blue: 35/255, alpha: 1.0).cgColor
         searchbutton.layer.cornerRadius = 10
         searchbutton.layer.borderWidth = 2
     }
@@ -124,6 +125,9 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, UITab
             let selectedBrewery = store.breweries[indexPath.row]
             destVC.brewery = selectedBrewery
             destVC.hidesBottomBarWhenPushed = true
+            let backItem = UIBarButtonItem()
+            backItem.title = ""
+            navigationItem.backBarButtonItem = backItem
         }
     }
 }

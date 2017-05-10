@@ -19,6 +19,9 @@ class ContainerViewController: UIViewController {
         super.viewDidLoad()
         navigationItem.title = "Search by Beer"
         searchSegmentedControl.selectedSegmentIndex = 0
+        let backItem = UIBarButtonItem()
+        backItem.title = ""
+        navigationItem.backBarButtonItem = backItem
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,6 +34,7 @@ class ContainerViewController: UIViewController {
             beerSearchView.isHidden = false
             brewerySearchView.isHidden = true
             navigationItem.title = "Search by Beer"
+            
             break
         case 1:
             beerSearchView.isHidden = true
@@ -42,15 +46,4 @@ class ContainerViewController: UIViewController {
             break
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

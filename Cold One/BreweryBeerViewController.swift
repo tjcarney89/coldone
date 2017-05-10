@@ -61,6 +61,7 @@ class BreweryBeerViewController: UIViewController, UITableViewDelegate, UITableV
         let cell = tableView.dequeueReusableCell(withIdentifier: "breweryBeerCell", for: indexPath) as! BeerCell
         let currentBeer = store.currentBreweryBeers[indexPath.row]
         cell.breweryBeerView.beer = currentBeer
+        cell.selectionStyle = .none
         return cell
     }
     
@@ -74,6 +75,9 @@ class BreweryBeerViewController: UIViewController, UITableViewDelegate, UITableV
             let selectedBeer = store.currentBreweryBeers[indexPath.row]
             destVC.beer = selectedBeer
             destVC.hidesBottomBarWhenPushed = true
+            let backItem = UIBarButtonItem()
+            backItem.title = ""
+            navigationItem.backBarButtonItem = backItem
         }
     }
     

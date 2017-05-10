@@ -158,14 +158,14 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mile(s)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kbg-ps-UsM">
                                 <rect key="frame" x="221" y="94" width="60" height="17"/>
                                 <fontDescription key="fontDescription" name="Beer" family="Beer" pointSize="17"/>
-                                <color key="textColor" red="0.80392156859999997" green="0.3921568627" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.45098039220000002" green="0.23137254900000001" blue="0.098039215690000001" alpha="0.75997966610000001" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xyn-4g-i60">
                                 <rect key="frame" x="16" y="86" width="94" height="32"/>
                                 <fontDescription key="fontDescription" name="Beer" family="Beer" pointSize="20"/>
                                 <state key="normal" title="SEARCH">
-                                    <color key="titleColor" red="0.3411764706" green="0.18039215689999999" blue="0.043137254899999998" alpha="0.75997966610000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.45098039220000002" green="0.23137254900000001" blue="0.098039215690000001" alpha="0.75997966610000001" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="searchButtonPressed:" destination="DAb-VZ-9i2" eventType="touchUpInside" id="AIR-Er-rZE"/>
@@ -289,7 +289,7 @@
                                     <segment title="Beer"/>
                                     <segment title="Brewery"/>
                                 </segments>
-                                <color key="tintColor" red="0.80392156862745101" green="0.39215686274509803" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.45098039220000002" green="0.23137254900000001" blue="0.098039215690000001" alpha="0.75997966610000001" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="segmentedValueChanged:" destination="4EU-ML-iWT" eventType="valueChanged" id="fem-23-6if"/>
                                 </connections>
@@ -328,8 +328,18 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" id="2Pl-0g-R0z">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <color key="barTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.3411764706" green="0.18039215689999999" blue="0.043137254899999998" alpha="0.75997966610000001" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.3411764706" green="0.18039215689999999" blue="0.043137254899999998" alpha="0.75997966610000001" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.81960784313725488" green="0.66666666666666663" blue="0.13725490196078433" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" red="0.9999127984046936" green="1" blue="0.99988144636154175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.3411764705882353" green="0.1803921568627451" blue="0.043137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="unselectedItemTintColor">
+                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="selectedIndex">
@@ -348,7 +358,7 @@
             </objects>
             <point key="canvasLocation" x="-6014" y="204"/>
         </scene>
-        <!--Saved Beers-->
+        <!--Saved Table View Controller-->
         <scene sceneID="2bR-Pg-4z4">
             <objects>
                 <tableViewController id="Vyq-ex-AGN" customClass="SavedTableViewController" customModule="Cold_One" customModuleProvider="target" sceneMemberID="viewController">
@@ -386,7 +396,7 @@
                             <outlet property="delegate" destination="Vyq-ex-AGN" id="F4Q-Oz-moc"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Saved Beers" id="Qv7-bT-URf"/>
+                    <navigationItem key="navigationItem" id="Qv7-bT-URf"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7tB-k3-ya3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -857,7 +867,7 @@
         <image name="search" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="WSb-cK-j5p"/>
         <segue reference="1Vb-s4-QW8"/>
+        <segue reference="WSb-cK-j5p"/>
     </inferredMetricsTieBreakers>
 </document>

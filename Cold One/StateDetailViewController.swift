@@ -36,14 +36,14 @@ class StateDetailViewController: UIViewController, UITableViewDelegate, UITableV
                     self.breweries = breweries
                 }
             })
-            
-            
         }
         stateDetailTableView.delegate = self
         stateDetailTableView.dataSource = self
-
+        
     }
     
+    
+       
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
     }
@@ -56,6 +56,7 @@ class StateDetailViewController: UIViewController, UITableViewDelegate, UITableV
         let cell = tableView.dequeueReusableCell(withIdentifier: "stateDetailCell", for: indexPath) as! PouredBeerCell
         let currentBrew = brews[indexPath.row]
         cell.beerStateView.brew = currentBrew
+        cell.selectionStyle = .none
         return cell
     }
     
@@ -82,6 +83,9 @@ class StateDetailViewController: UIViewController, UITableViewDelegate, UITableV
             let filteredBreweries = breweries.filter { $0.type != "Production Facility" && $0.type != "Office" }
             destVC.breweries = filteredBreweries
             destVC.hidesBottomBarWhenPushed = true
+            let backItem = UIBarButtonItem()
+            backItem.title = ""
+            navigationItem.backBarButtonItem = backItem
         }
     }
     
