@@ -12,4 +12,5 @@ class SavedBeerCell: UITableViewCell {
     
     @IBOutlet weak var savedBeerView: SavedBeerView!
     
+    
 }

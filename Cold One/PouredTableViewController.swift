@@ -8,13 +8,23 @@
 
 import UIKit
 
-class PouredTableViewController: UITableViewController {
+class PouredTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet weak var pouredTableView: UITableView!
+    
     
     let store = BeerDataStore.shared
     let cdStore = CoreDataStack.sharedInstance
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if cdStore.pouredBrews.isEmpty {
+            pouredTableView.isHidden = true
+        } else {
+            pouredTableView.isHidden = false
+        }
+        pouredTableView.delegate = self
+        pouredTableView.dataSource = self
         cdStore.fetchData()
         navigationItem.title = "Poured Beers"
         
@@ -22,22 +32,31 @@ class PouredTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        if cdStore.pouredBrews.isEmpty {
+            pouredTableView.isHidden = true
+        } else {
+            pouredTableView.isHidden = false
+        }
         cdStore.fetchData()
-        tableView.reloadData()
+        pouredTableView.reloadData()
     }
 
     // MARK: - Table view data source
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
+     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cdStore.pouredBrews.count
     }
 
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "pouredCell", for: indexPath) as! PouredBeerCell
         let currentBrew = cdStore.pouredBrews[indexPath.row]
         cell.pouredBeerView.brew = currentBrew
@@ -45,7 +64,7 @@ class PouredTableViewController: UITableViewController {
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let currentBrew = cdStore.pouredBrews[indexPath.row]
             cdStore.pouredBrews.remove(at: indexPath.row)

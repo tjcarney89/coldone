@@ -8,35 +8,53 @@
 
 import UIKit
 
-class SavedTableViewController: UITableViewController, BeerDelegate {
+class SavedTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, BeerDelegate {
+    
+    @IBOutlet weak var savedTableView: UITableView!
     
     let store = BeerDataStore.shared
     let cdStore = CoreDataStack.sharedInstance
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        if cdStore.savedBrews.isEmpty {
+            savedTableView.isHidden = true
+        } else {
+            savedTableView.isHidden = false
+        }
+        savedTableView.delegate = self
+        savedTableView.dataSource = self
         cdStore.fetchData()
         navigationItem.title = "Saved Beers"
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        if cdStore.savedBrews.isEmpty {
+            savedTableView.isHidden = true
+        } else {
+            savedTableView.isHidden = false
+        }
         cdStore.fetchData()
-        tableView.reloadData()
+        savedTableView.reloadData()
     }
 
     // MARK: - Table view data source
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
+     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cdStore.savedBrews.count
     }
 
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "beerCell", for: indexPath) as! SavedBeerCell
         let currentBrew = cdStore.savedBrews[indexPath.row]
         cell.savedBeerView.brew = currentBrew
@@ -45,7 +63,7 @@ class SavedTableViewController: UITableViewController, BeerDelegate {
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let currentBrew = cdStore.savedBrews[indexPath.row]
             cdStore.savedBrews.remove(at: indexPath.row)
@@ -58,6 +76,6 @@ class SavedTableViewController: UITableViewController, BeerDelegate {
 extension SavedTableViewController {
     func reloadData() {
         cdStore.fetchData()
-        tableView.reloadData()
+        savedTableView.reloadData()
     }
 }
