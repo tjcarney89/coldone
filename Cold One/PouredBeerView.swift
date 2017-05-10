@@ -15,10 +15,17 @@ class PouredBeerView: UIView {
     @IBOutlet weak var breweryLabel: UILabel!
     @IBOutlet weak var favoriteButton: UIButton!
     
+    @IBOutlet weak var brewImageView: UIImageView!
     let cdStore = CoreDataStack.sharedInstance
     
     var brew: Brew! {
         didSet {
+            if let urlString = brew.imageURL {
+                let url = URL(string: urlString)
+                brewImageView.kf.setImage(with: url)
+            } else {
+                brewImageView.image = UIImage(named: "default")
+            }
             beerNameLabel.text = brew.name
             breweryLabel.text = brew.brewery
             if brew.isFavorite {

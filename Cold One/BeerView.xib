@@ -30,35 +30,35 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goose IPA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="IAg-vR-Hm5">
-                    <rect key="frame" x="100" y="14" width="337.5" height="32.5"/>
+                    <rect key="frame" x="100" y="14" width="270" height="32.5"/>
                     <fontDescription key="fontDescription" name="RootBeer" family="Root Beer" pointSize="31"/>
                     <color key="textColor" red="0.9999127984046936" green="1" blue="0.99988144636154175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="American-Style India Pale Ale" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Mi4-CM-xk7">
-                    <rect key="frame" x="100" y="54.5" width="337.5" height="25.5"/>
+                    <rect key="frame" x="100" y="54.5" width="270" height="25.5"/>
                     <fontDescription key="fontDescription" name="RootBeer" family="Root Beer" pointSize="24"/>
                     <color key="textColor" red="0.9999127984046936" green="1" blue="0.99988144636154175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mi1-Jt-AIp">
-                    <rect key="frame" x="0.0" y="-1" width="80" height="84"/>
+                    <rect key="frame" x="2" y="1" width="74" height="78"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="mi1-Jt-AIp" secondAttribute="height" multiplier="1:1" constant="-4" id="kq7-OF-FxW"/>
-                        <constraint firstAttribute="width" constant="80" id="oqZ-gl-33h"/>
+                        <constraint firstAttribute="width" constant="74" id="oqZ-gl-33h"/>
                     </constraints>
                 </imageView>
             </subviews>
             <color key="backgroundColor" red="0.45098039220000002" green="0.23137254900000001" blue="0.098039215690000001" alpha="0.75997966610000001" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="Mi4-CM-xk7" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="100" id="4Ec-CI-R1X"/>
-                <constraint firstItem="IAg-vR-Hm5" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.9" id="8HH-NK-IAo"/>
-                <constraint firstItem="Mi4-CM-xk7" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.9" id="KVC-Aq-8Jp"/>
-                <constraint firstItem="mi1-Jt-AIp" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="O6y-eK-zBL"/>
+                <constraint firstItem="IAg-vR-Hm5" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.72" id="8HH-NK-IAo"/>
+                <constraint firstItem="mi1-Jt-AIp" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="2" id="9df-t3-9Qe"/>
+                <constraint firstItem="Mi4-CM-xk7" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.72" id="KVC-Aq-8Jp"/>
                 <constraint firstItem="IAg-vR-Hm5" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="100" id="REK-q3-dXH"/>
                 <constraint firstItem="IAg-vR-Hm5" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="14" id="dKG-JA-APs"/>
                 <constraint firstItem="Mi4-CM-xk7" firstAttribute="top" secondItem="IAg-vR-Hm5" secondAttribute="bottom" constant="8" id="eEX-B4-6CM"/>
-                <constraint firstItem="mi1-Jt-AIp" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="-1" id="fqZ-i9-Gn1"/>
+                <constraint firstItem="mi1-Jt-AIp" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="1" id="u6o-ij-8Z1"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

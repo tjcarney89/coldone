@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,6 +22,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SavedBeerView" customModule="Cold_One" customModuleProvider="target">
             <connections>
                 <outlet property="beerNameLabel" destination="CyB-h3-MWb" id="K9a-8J-g1k"/>
+                <outlet property="brewImageView" destination="X2a-pf-83h" id="SzJ-A3-MO3"/>
                 <outlet property="breweryLabel" destination="k0F-WH-HAO" id="Lfk-Qb-PSZ"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="fNO-31-mVh"/>
             </connections>
@@ -31,13 +33,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goose IPA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="CyB-h3-MWb">
-                    <rect key="frame" x="16" y="11" width="300" height="32.5"/>
+                    <rect key="frame" x="100" y="11" width="206.5" height="32.5"/>
                     <fontDescription key="fontDescription" name="RootBeer" family="Root Beer" pointSize="31"/>
                     <color key="textColor" red="0.9999127984046936" green="1" blue="0.99988144636154175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goose Island Beer Company" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k0F-WH-HAO">
-                    <rect key="frame" x="16" y="51.5" width="223.5" height="25.5"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goose Island Beer Company" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="k0F-WH-HAO">
+                    <rect key="frame" x="100" y="51.5" width="270" height="25.5"/>
                     <fontDescription key="fontDescription" name="RootBeer" family="Root Beer" pointSize="24"/>
                     <color key="textColor" red="0.9999127984046936" green="1" blue="0.99988144636154175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
@@ -49,22 +51,32 @@
                     </constraints>
                     <fontDescription key="fontDescription" name="Beer" family="Beer" pointSize="17"/>
                     <state key="normal" title="Pour">
-                        <color key="titleColor" red="0.80392156859999997" green="0.3921568627" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleColor" red="0.81960784310000001" green="0.66666666669999997" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <connections>
                         <action selector="pourButtonTapped:" destination="-1" eventType="touchUpInside" id="KWc-L5-hJk"/>
                     </connections>
                 </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="X2a-pf-83h">
+                    <rect key="frame" x="2" y="3" width="74" height="74"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="X2a-pf-83h" secondAttribute="height" multiplier="1:1" id="LYh-ZT-flC"/>
+                        <constraint firstAttribute="width" constant="74" id="iCg-H5-1r4"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="0.45098039220000002" green="0.23137254900000001" blue="0.098039215690000001" alpha="0.75997966610000001" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="X2a-pf-83h" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="BRe-4h-Whl"/>
                 <constraint firstItem="RnD-cy-Wzf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="6" id="F05-Ry-HTC"/>
                 <constraint firstItem="CyB-h3-MWb" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="11" id="OVw-Q9-x5V"/>
                 <constraint firstItem="k0F-WH-HAO" firstAttribute="top" secondItem="CyB-h3-MWb" secondAttribute="bottom" constant="8" id="OnM-gM-1qR"/>
                 <constraint firstAttribute="trailing" secondItem="RnD-cy-Wzf" secondAttribute="trailing" constant="16" id="XBn-ov-L5D"/>
-                <constraint firstItem="CyB-h3-MWb" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="XjS-JJ-Zhg"/>
-                <constraint firstItem="k0F-WH-HAO" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="eyX-o1-udp"/>
-                <constraint firstItem="CyB-h3-MWb" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.8" id="lnR-ot-h0x"/>
+                <constraint firstItem="CyB-h3-MWb" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="100" id="XjS-JJ-Zhg"/>
+                <constraint firstItem="X2a-pf-83h" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="2" id="ase-jp-u0N"/>
+                <constraint firstItem="k0F-WH-HAO" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="100" id="eyX-o1-udp"/>
+                <constraint firstItem="CyB-h3-MWb" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.55" id="lnR-ot-h0x"/>
+                <constraint firstItem="k0F-WH-HAO" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.72" id="viR-9N-LXu"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

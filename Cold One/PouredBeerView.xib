@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -18,6 +19,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PouredBeerView" customModule="Cold_One" customModuleProvider="target">
             <connections>
                 <outlet property="beerNameLabel" destination="ANk-ph-o3q" id="fay-3Z-aXb"/>
+                <outlet property="brewImageView" destination="KbE-l0-Dxm" id="6am-CG-ShS"/>
                 <outlet property="breweryLabel" destination="5DQ-Rs-Da7" id="UJc-Q5-nne"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="6Ja-dJ-Fzx"/>
                 <outlet property="favoriteButton" destination="9LZ-Qa-deM" id="sLM-k2-crk"/>
@@ -28,20 +30,27 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goose IPA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ANk-ph-o3q">
-                    <rect key="frame" x="16" y="10" width="98.5" height="32.5"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goose IPA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ANk-ph-o3q">
+                    <rect key="frame" x="100" y="10" width="221.5" height="32.5"/>
                     <fontDescription key="fontDescription" name="RootBeer" family="Root Beer" pointSize="31"/>
                     <color key="textColor" red="0.9999127984046936" green="1" blue="0.99988144636154175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goose Island Brewing Company" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5DQ-Rs-Da7">
-                    <rect key="frame" x="16" y="50.5" width="255" height="25.5"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goose Island Brewing Company" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="5DQ-Rs-Da7">
+                    <rect key="frame" x="100" y="50.5" width="270" height="25.5"/>
                     <fontDescription key="fontDescription" name="RootBeer" family="Root Beer" pointSize="24"/>
                     <color key="textColor" red="0.9999127984046936" green="1" blue="0.99988144636154175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KbE-l0-Dxm">
+                    <rect key="frame" x="2" y="3" width="74" height="74"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="KbE-l0-Dxm" secondAttribute="height" multiplier="1:1" id="Ct6-uy-c1D"/>
+                        <constraint firstAttribute="width" constant="74" id="u7b-7S-yby"/>
+                    </constraints>
+                </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9LZ-Qa-deM">
-                    <rect key="frame" x="325" y="23" width="34" height="34"/>
+                    <rect key="frame" x="325" y="9" width="34" height="34"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="34" id="WFU-Sf-q9j"/>
                         <constraint firstAttribute="width" secondItem="9LZ-Qa-deM" secondAttribute="height" multiplier="1:1" id="oGy-Gw-sSd"/>
@@ -54,12 +63,16 @@
             </subviews>
             <color key="backgroundColor" red="0.45098039220000002" green="0.23137254900000001" blue="0.098039215690000001" alpha="0.75997966610000001" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="ANk-ph-o3q" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="1D1-qm-OJB"/>
+                <constraint firstItem="ANk-ph-o3q" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="100" id="1D1-qm-OJB"/>
                 <constraint firstItem="ANk-ph-o3q" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="BtI-co-hDf"/>
-                <constraint firstItem="9LZ-Qa-deM" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="JTM-1g-5tU"/>
                 <constraint firstItem="5DQ-Rs-Da7" firstAttribute="top" secondItem="ANk-ph-o3q" secondAttribute="bottom" constant="8" id="Jh9-1c-u03"/>
+                <constraint firstItem="KbE-l0-Dxm" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="2" id="Yqt-Xq-kFg"/>
+                <constraint firstItem="9LZ-Qa-deM" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="9" id="a5G-48-H8E"/>
                 <constraint firstAttribute="trailing" secondItem="9LZ-Qa-deM" secondAttribute="trailing" constant="16" id="fMq-xw-IiH"/>
-                <constraint firstItem="5DQ-Rs-Da7" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="ies-LB-ZLL"/>
+                <constraint firstItem="5DQ-Rs-Da7" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="100" id="ies-LB-ZLL"/>
+                <constraint firstItem="KbE-l0-Dxm" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="kb2-jJ-c51"/>
+                <constraint firstItem="5DQ-Rs-Da7" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.72" id="uGE-2u-G0W"/>
+                <constraint firstItem="ANk-ph-o3q" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.59" id="xpw-qW-pBv"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

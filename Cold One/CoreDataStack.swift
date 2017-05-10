@@ -126,6 +126,7 @@ final class CoreDataStack {
         brew.state = beer.brewery?.state.name
         brew.style = beer.style
         brew.abv = beer.abv
+        brew.imageURL = beer.imageURL
         brew.isFavorite = false
         brew.isSaved = false
         brew.isPoured = false
