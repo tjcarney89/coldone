@@ -17,6 +17,7 @@ class BrewerySearchViewController: UIViewController, UITableViewDelegate, UITabl
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchResultsTableView.isHidden = true
         store.currentBreweryBeers.removeAll()
         brewerySearchBar.delegate = self
         searchResultsTableView.delegate = self
@@ -28,6 +29,7 @@ class BrewerySearchViewController: UIViewController, UITableViewDelegate, UITabl
         if let search = brewerySearchBar.text {
             store.searchBreweries(name: search, completion: {
                 DispatchQueue.main.async {
+                    self.searchResultsTableView.isHidden = false
                     self.searchResultsTableView.reloadData()
 
                 }
@@ -36,6 +38,7 @@ class BrewerySearchViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchResultsTableView.isHidden = true
         store.currentBreweryBeers.removeAll()
         searchResultsTableView.reloadData()
     }

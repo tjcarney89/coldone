@@ -298,18 +298,18 @@
                                 </connections>
                             </containerView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ms9-Ks-f3f">
-                                <rect key="frame" x="93.5" y="124" width="187.5" height="29"/>
+                                <rect key="frame" x="93.5" y="114" width="187.5" height="29"/>
                                 <segments>
                                     <segment title="Beer"/>
                                     <segment title="Brewery"/>
                                 </segments>
-                                <color key="tintColor" red="0.45098039220000002" green="0.23137254900000001" blue="0.098039215690000001" alpha="0.75997966610000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.9999127984046936" green="1" blue="0.99988144636154175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="segmentedValueChanged:" destination="4EU-ML-iWT" eventType="valueChanged" id="fem-23-6if"/>
                                 </connections>
                             </segmentedControl>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.45098039220000002" green="0.23137254900000001" blue="0.098039215690000001" alpha="0.75997966610000001" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ms9-Ks-f3f" firstAttribute="width" secondItem="7xx-lV-2JV" secondAttribute="width" multiplier="0.5" id="3kD-Yp-52k"/>
                             <constraint firstItem="eaT-qY-hjW" firstAttribute="height" secondItem="7xx-lV-2JV" secondAttribute="height" id="HxM-bl-aag"/>
@@ -318,7 +318,7 @@
                             <constraint firstItem="eaT-qY-hjW" firstAttribute="centerY" secondItem="7xx-lV-2JV" secondAttribute="centerY" id="VsL-Zf-93H"/>
                             <constraint firstItem="fI5-jI-7dB" firstAttribute="height" secondItem="7xx-lV-2JV" secondAttribute="height" id="cHs-BY-pWE"/>
                             <constraint firstItem="fI5-jI-7dB" firstAttribute="centerY" secondItem="7xx-lV-2JV" secondAttribute="centerY" id="com-Uj-9nK"/>
-                            <constraint firstItem="ms9-Ks-f3f" firstAttribute="top" secondItem="sma-eq-ITw" secondAttribute="bottom" constant="60" id="m0J-2d-lO4"/>
+                            <constraint firstItem="ms9-Ks-f3f" firstAttribute="top" secondItem="sma-eq-ITw" secondAttribute="bottom" constant="50" id="m0J-2d-lO4"/>
                             <constraint firstItem="fI5-jI-7dB" firstAttribute="width" secondItem="7xx-lV-2JV" secondAttribute="width" id="mAT-ad-M4x"/>
                             <constraint firstItem="fI5-jI-7dB" firstAttribute="centerX" secondItem="7xx-lV-2JV" secondAttribute="centerX" id="r0W-Gg-tam"/>
                             <constraint firstItem="ms9-Ks-f3f" firstAttribute="centerX" secondItem="7xx-lV-2JV" secondAttribute="centerX" id="uCG-tZ-qSt"/>
@@ -653,11 +653,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="f9i-YT-Tg4">
-                                <rect key="frame" x="0.0" y="8" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OQZ-zR-Tr6">
-                                <rect key="frame" x="0.0" y="92" width="375" height="575"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A9j-Dd-Zx8">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <color key="backgroundColor" red="0.45098039220000002" green="0.23137254900000001" blue="0.098039215690000001" alpha="0.75997966610000001" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OQZ-zR-Tr6">
+                                <rect key="frame" x="0.0" y="84" width="375" height="583"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="breweryCell" rowHeight="80" id="JI0-bw-Sj2" customClass="BeerCell" customModule="Cold_One" customModuleProvider="target">
@@ -690,12 +694,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="f9i-YT-Tg4" firstAttribute="centerX" secondItem="40g-Ki-xOu" secondAttribute="centerX" id="BER-ca-p17"/>
+                            <constraint firstItem="hyZ-Ny-VEn" firstAttribute="top" secondItem="A9j-Dd-Zx8" secondAttribute="bottom" id="Cke-OY-mtz"/>
                             <constraint firstAttribute="trailing" secondItem="OQZ-zR-Tr6" secondAttribute="trailing" id="EHy-B2-rdA"/>
                             <constraint firstItem="OQZ-zR-Tr6" firstAttribute="leading" secondItem="40g-Ki-xOu" secondAttribute="leading" id="LJJ-Tl-hnq"/>
                             <constraint firstItem="OQZ-zR-Tr6" firstAttribute="top" secondItem="f9i-YT-Tg4" secondAttribute="bottom" constant="40" id="Nz4-XL-Ccd"/>
                             <constraint firstItem="hyZ-Ny-VEn" firstAttribute="top" secondItem="OQZ-zR-Tr6" secondAttribute="bottom" id="OJh-rX-ZWZ"/>
-                            <constraint firstItem="f9i-YT-Tg4" firstAttribute="top" secondItem="VGw-AV-iSL" secondAttribute="bottom" constant="8" id="vYm-iy-it3"/>
+                            <constraint firstItem="A9j-Dd-Zx8" firstAttribute="leading" secondItem="40g-Ki-xOu" secondAttribute="leading" id="VPm-48-sd2"/>
+                            <constraint firstItem="A9j-Dd-Zx8" firstAttribute="top" secondItem="f9i-YT-Tg4" secondAttribute="bottom" id="Vgk-df-8bv"/>
+                            <constraint firstItem="f9i-YT-Tg4" firstAttribute="top" secondItem="VGw-AV-iSL" secondAttribute="bottom" id="vYm-iy-it3"/>
                             <constraint firstItem="f9i-YT-Tg4" firstAttribute="width" secondItem="40g-Ki-xOu" secondAttribute="width" id="wSb-l7-qft"/>
+                            <constraint firstAttribute="trailing" secondItem="A9j-Dd-Zx8" secondAttribute="trailing" id="zfe-bm-jJU"/>
                         </constraints>
                     </view>
                     <connections>
@@ -720,11 +728,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="DWc-uJ-aOz">
-                                <rect key="frame" x="0.0" y="8" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nZx-CV-Uk3">
-                                <rect key="frame" x="0.0" y="92" width="375" height="575"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ptT-KS-4eX">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <color key="backgroundColor" red="0.45098039220000002" green="0.23137254900000001" blue="0.098039215690000001" alpha="0.75997966610000001" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nZx-CV-Uk3">
+                                <rect key="frame" x="0.0" y="84" width="375" height="583"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="singleBeerCell" rowHeight="80" id="m5S-Dp-ue7" customClass="BeerCell" customModule="Cold_One" customModuleProvider="target">
@@ -757,11 +769,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="nZx-CV-Uk3" firstAttribute="top" secondItem="DWc-uJ-aOz" secondAttribute="bottom" constant="40" id="APi-RH-rvH"/>
+                            <constraint firstItem="ptT-KS-4eX" firstAttribute="leading" secondItem="m8Q-v3-s2L" secondAttribute="leading" id="C3S-ky-H21"/>
+                            <constraint firstItem="euM-Nt-0J4" firstAttribute="top" secondItem="ptT-KS-4eX" secondAttribute="bottom" id="CGW-i7-hvX"/>
                             <constraint firstItem="euM-Nt-0J4" firstAttribute="top" secondItem="nZx-CV-Uk3" secondAttribute="bottom" id="NWD-mJ-WOa"/>
-                            <constraint firstItem="DWc-uJ-aOz" firstAttribute="top" secondItem="WF5-Wr-TRl" secondAttribute="bottom" constant="8" id="Qwq-lG-pDn"/>
+                            <constraint firstItem="DWc-uJ-aOz" firstAttribute="top" secondItem="WF5-Wr-TRl" secondAttribute="bottom" id="Qwq-lG-pDn"/>
                             <constraint firstItem="nZx-CV-Uk3" firstAttribute="leading" secondItem="m8Q-v3-s2L" secondAttribute="leading" id="WRE-yn-0wK"/>
+                            <constraint firstItem="ptT-KS-4eX" firstAttribute="top" secondItem="DWc-uJ-aOz" secondAttribute="bottom" id="Yfb-ts-JfI"/>
                             <constraint firstItem="DWc-uJ-aOz" firstAttribute="width" secondItem="m8Q-v3-s2L" secondAttribute="width" id="a9W-aj-nVd"/>
                             <constraint firstAttribute="trailing" secondItem="nZx-CV-Uk3" secondAttribute="trailing" id="gCT-te-Jg0"/>
+                            <constraint firstAttribute="trailing" secondItem="ptT-KS-4eX" secondAttribute="trailing" id="k0k-5a-mPy"/>
                             <constraint firstItem="DWc-uJ-aOz" firstAttribute="centerX" secondItem="m8Q-v3-s2L" secondAttribute="centerX" id="tyn-18-iTg"/>
                         </constraints>
                     </view>
@@ -881,7 +897,7 @@
         <image name="search" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="1Vb-s4-QW8"/>
         <segue reference="WSb-cK-j5p"/>
+        <segue reference="1Vb-s4-QW8"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -17,6 +17,7 @@ class BeerSearchViewController: UIViewController, UITableViewDelegate, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchResultsTableView.isHidden = true
         beerSearchBar.delegate = self
         searchResultsTableView.delegate = self
         searchResultsTableView.dataSource = self
@@ -32,6 +33,7 @@ class BeerSearchViewController: UIViewController, UITableViewDelegate, UITableVi
         if let search = searchBar.text {
             store.searchBeers(name: search, completion: { (beers) in
                 DispatchQueue.main.async {
+                    self.searchResultsTableView.isHidden = false
                     self.searchResultsTableView.reloadData()
                 }
             })
@@ -40,6 +42,7 @@ class BeerSearchViewController: UIViewController, UITableViewDelegate, UITableVi
     
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchResultsTableView.isHidden = true
         store.currentBeer.removeAll()
         searchResultsTableView.reloadData()
     }
